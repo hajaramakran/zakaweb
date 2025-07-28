@@ -1,0 +1,655 @@
+
+        @font-face {
+            font-family: 'Open Sans Regular';
+            font-style: normal;
+            font-weight: 400;
+            src:url('../fonts/open-sans-v18-latin-regular.woff') format('woff');
+        }
+ 
+        @font-face {
+            font-family: 'Open Sans Bold';
+            font-style: normal;
+            font-weight: 800;
+            src:url('../fonts/OpenSans-Bold.woff') format('woff');
+        }
+  
+        @font-face {
+            font-family: 'Open Sans ExtraBold';
+            font-style: normal;
+            font-weight: 800;
+            src:url('../fonts/open-sans-v18-latin-800.woff') format('woff');
+        }
+ 
+        @media print {
+            .MuiDialog-root {
+                position: absolute !important;
+            }
+        }
+
+        .MuiDialog-scrollPaper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .MuiDialog-scrollBody {
+            overflow-x: hidden;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        .MuiDialog-scrollBody:after {
+            width: 0;
+            height: 100%;
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .MuiDialog-container {
+            height: 100%;
+            outline: 0;
+        }
+
+        @media print {
+            .MuiDialog-container {
+                height: auto;
+            }
+        }
+
+        .MuiDialog-paper {
+            margin: 32px;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        @media print {
+            .MuiDialog-paper {
+                box-shadow: none;
+                overflow-y: visible;
+            }
+        }
+
+        .MuiDialog-paperScrollPaper {
+            display: flex;
+            max-height: calc(100% - 64px);
+            flex-direction: column;
+        }
+
+        .MuiDialog-paperScrollBody {
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .MuiDialog-paperWidthFalse {
+            max-width: calc(100% - 64px);
+        }
+
+        .MuiDialog-paperWidthXs {
+            max-width: 444px;
+        }
+
+        @media (max-width:507.95px) {
+            .MuiDialog-paperWidthXs.MuiDialog-paperScrollBody {
+                max-width: calc(100% - 64px);
+            }
+        }
+
+        .MuiDialog-paperWidthSm {
+            max-width: 600px;
+        }
+
+        @media (max-width:663.95px) {
+            .MuiDialog-paperWidthSm.MuiDialog-paperScrollBody {
+                max-width: calc(100% - 64px);
+            }
+        }
+
+        .MuiDialog-paperWidthMd {
+            max-width: 960px;
+        }
+
+        @media (max-width:1023.95px) {
+            .MuiDialog-paperWidthMd.MuiDialog-paperScrollBody {
+                max-width: calc(100% - 64px);
+            }
+        }
+
+        .MuiDialog-paperWidthLg {
+            max-width: 1280px;
+        }
+
+        @media (max-width:1343.95px) {
+            .MuiDialog-paperWidthLg.MuiDialog-paperScrollBody {
+                max-width: calc(100% - 64px);
+            }
+        }
+
+        .MuiDialog-paperWidthXl {
+            max-width: 1920px;
+        }
+
+        @media (max-width:1983.95px) {
+            .MuiDialog-paperWidthXl.MuiDialog-paperScrollBody {
+                max-width: calc(100% - 64px);
+            }
+        }
+
+        .MuiDialog-paperFullWidth {
+            width: calc(100% - 64px);
+        }
+
+        .MuiDialog-paperFullScreen {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            max-width: 100%;
+            max-height: none;
+            border-radius: 0;
+        }
+
+        .MuiDialog-paperFullScreen.MuiDialog-paperScrollBody {
+            margin: 0;
+            max-width: 100%;
+        }
+
+        #inspect-element-top-layer * {
+            all: unset;
+        }
+        /* --- CSS for the Centered Desktop Menu (No change here) --- */
+.main-nav-center ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    height: 100%;
+}
+
+.main-nav-center li {
+    margin: 0 20px;
+}
+
+.main-nav-center a {
+    text-decoration: none;
+    color: #3607e2; /* White color for links */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.main-nav-center a:hover {
+    color: #ff0000; /* Red color on hover */
+}
+
+/* --- CSS for Hamburger Menu Icon --- */
+.menu-toggler {
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start; /* CHANGED: Align bars to the left */
+    outline: none;
+    z-index: 1001;
+}
+
+.menu-toggler .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-toggler .bar:nth-child(2) {
+    width: 80%;
+}
+
+/* Hamburger icon animation to 'X' */
+.menu-toggler.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-8px, 8px); /* CHANGED: Rotation and translation for left side */
+    width: 100%;
+}
+
+.menu-toggler.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggler.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px); /* CHANGED: Rotation and translation for left side */
+    width: 100%;
+}
+
+/* --- CSS for Off-Canvas Menu (Side Menu) --- */
+.off-canvas-menu {
+    position: fixed;
+    top: 0;
+    left: -280px; /* CHANGED: Initially hidden off-screen to the LEFT */
+    width: 280px;
+    height: 100%;
+    background-color: #222;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5); /* CHANGED: Shadow for depth from the right */
+    transition: left 0.3s ease-in-out; /* CHANGED: Transition for 'left' property */
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.off-canvas-menu.open {
+    left: 0; /* CHANGED: Slide in when 'open' class is active */
+}
+
+.off-canvas-menu .close-menu {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    position: absolute;
+    top: 10px;
+    left: 15px; /* CHANGED: Position close button on the left */
+    cursor: pointer;
+    outline: none;
+}
+
+.off-canvas-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.off-canvas-menu li {
+    margin-bottom: 15px;
+}
+
+.off-canvas-menu a {
+    text-decoration: none;
+    color: #eeeeee;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.off-canvas-menu a:hover {
+    color: #ff0000;
+}
+
+/* --- Overlay CSS (No change here) --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Responsive Behavior (No change here for desktop hiding) --- */
+@media (max-width: 991.98px) {
+    .main-nav-center {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .menu-toggler {
+        display: none !important;
+    }
+    .off-canvas-menu {
+        display: none !important;
+    }
+    .overlay {
+        display: none !important;
+    }
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+  /* Section title */
+.shop-section .section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* === PRODUCT CARD === */
+.product-card {
+  border: none;
+  background: none;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px; /* spacing between rows */
+}
+
+/* Image wrapper with button overlay */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.image-wrapper .add-to-cart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 98%;
+  padding: 12px;
+  margin-left: 3px;
+  margin-bottom: 3px;
+  background: rgba(255, 255, 255, 0.75); /* slight transparency */
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #000;
+   transition: background 0.4s ease, color 0.4s ease;
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.image-wrapper .add-to-cart:hover {
+  background: linear-gradient(135deg, #ff4c60, #e63946);
+  color: white;
+  cursor: pointer;
+}
+
+/* Details below image */
+.product-details {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.product-rating {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.product-title:hover {
+  color: #e63946;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #3f9a4c;
+}
+
+.old-price {
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.new-price {
+  color: #3f9a4c;
+}
+
+/* === SIDEBAR === */
+.sidebar-widget {
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.widget-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.popular-posts li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.popular-posts img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.tags a {
+  display: inline-block;
+  background-color: #f3f3f3;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin: 5px 5px 0 0;
+  font-size: 0.85rem;
+  color: #333;
+  text-decoration: none;
+}
+
+/* === PAGINATION === */
+.pagination .page-link {
+  color: #333;
+  border: none;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #e63946;
+  color: white;
+  border-radius: 6px;
+}
+
+
+
+.contact-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.section-title {
+  color: red;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-card {
+  position: relative;
+  background: #f1e6e6;
+  border-radius: 25px;
+  padding: 40px 30px;
+  max-width: 350px;
+  flex: 1 1 300px;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Small red icon (left top corner) */
+.contact-card .icon-left {
+  font-size: 26px;
+  color: #d61717;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  
+}
+
+/* Big white icon (right bottom corner, faint) */
+.contact-card .icon-right {
+  font-size: 80px;
+  color: #ffffff;
+  opacity: 0.4;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  pointer-events: none;
+}
+
+
+.icon-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.icon-container img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.8;
+}
+
+.contact-card h3 {
+  margin: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black
+}
+
+.contact-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-left: 20px;
+
+}
+
+
+.contact-message-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contact-image img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.contact-message {
+  max-width: 600px;
+  flex: 1;
+  background: rgb(212, 227, 240);
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+
+.contact-message h4 {
+  color: red;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.contact-message h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.contact-message p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  flex: 1;
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #193694;
+  border-radius: 4px;
+  background: #f0f3fc;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-footer {
+  margin-top: 20px;
+}
+
+.form-footer label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.form-footer input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.form-footer button {
+  background-color: #d61717;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-footer button:hover {
+  background-color: #a30f0f;
+}
