@@ -1,17 +1,16 @@
-// apps.js
-document.addEventListener('DOMContentLoaded', function() {
-    const appsContainer = document.querySelector('.col-lg-9');
-    
-    // Remove existing content if any
+document.addEventListener('DOMContentLoaded', function () {
+    const appsContainer = document.querySelector('.col-lg-10'); // FIXED selector (was .col-lg-9)
+
+    // Clear any existing content
     while (appsContainer.firstChild) {
         appsContainer.removeChild(appsContainer.firstChild);
     }
 
-    // Create apps grid container
+    // Create grid container
     const appsGrid = document.createElement('div');
     appsGrid.className = 'apps-grid row';
-    
-    // Sample IPTV applications data
+
+    // Sample data
     const iptvApps = [
         {
             name: "Smart IPTV",
@@ -80,16 +79,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    // Create app cards
+    // Generate cards
     iptvApps.forEach(app => {
         const appCard = document.createElement('div');
         appCard.className = 'col-md-6 col-lg-4 mb-4 app-card';
-        
+
         appCard.innerHTML = `
             <div class="card h-100 shadow-sm border-0 rounded-lg overflow-hidden">
                 <div class="card-header bg-dark text-white py-3">
                     <div class="d-flex align-items-center">
-                        <img src="${app.logo}" alt="${app.name}" class="app-logo mr-3">
+                        <img src="${app.logo}" alt="${app.name}" class="app-logo mr-3" style="width: 40px; height: 40px; object-fit: cover;">
                         <h5 class="mb-0">${app.name}</h5>
                     </div>
                 </div>
@@ -112,35 +111,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
-        
+
         appsGrid.appendChild(appCard);
     });
 
-    // Add the grid to the container
     appsContainer.appendChild(appsGrid);
 
-    // Initialize tooltips
-    $('[data-toggle="tooltip"]').tooltip();
+    // Bootstrap tooltips (if used)
+    if (typeof $ !== 'undefined' && $.fn.tooltip) {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
 });
 
 function renderStars(rating) {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 >= 0.5;
     let stars = '';
-    
+
     for (let i = 0; i < fullStars; i++) {
         stars += '<i class="zmdi zmdi-star text-warning"></i>';
     }
-    
+
     if (hasHalfStar) {
         stars += '<i class="zmdi zmdi-star-half text-warning"></i>';
     }
-    
+
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
     for (let i = 0; i < emptyStars; i++) {
         stars += '<i class="zmdi zmdi-star-outline text-warning"></i>';
     }
-    
+
     return stars;
 }
 
@@ -154,10 +154,10 @@ function renderDownloadLinks(downloads) {
         linux: '<i class="zmdi zmdi-linux mr-2"></i> Linux',
         firestick: '<i class="zmdi zmdi-amazon mr-2"></i> Firestick'
     };
-    
+
     for (const [platform, url] of Object.entries(downloads)) {
         links += `<a class="dropdown-item" href="${url}">${platforms[platform] || platform}</a>`;
     }
-    
+
     return links;
 }
