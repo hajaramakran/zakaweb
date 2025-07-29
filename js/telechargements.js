@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const appsContainer = document.querySelector('.col-lg-10'); // FIXED selector (was .col-lg-9)
+    const appsContainer = document.querySelector('.apps-grid');
 
     // Clear any existing content
     while (appsContainer.firstChild) {
