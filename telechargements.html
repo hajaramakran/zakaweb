@@ -118,7 +118,24 @@
                     <p class="lead text-muted">Sélectionnez votre application préférée</p>
                 </div>
             </div>
-            
+                <!-- Compatibility Section -->
+            <div class="compatibility-section py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div>
+                                <h2 class="font-weight-bold mb-4">Télécharger direct</h2>
+                                <button>Télécharger direct l'APK</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="compatibility-devices">
+                                <img src="images/contact.jpg" alt="Devices" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Apps Grid Container -->
             <div class="row justify-content-center apps-grid-container">
                 <div class="col-lg-10">
@@ -128,51 +145,12 @@
                 </div>
             </div>
             
-            <!-- App Details Modal -->
-            <div class="modal fade" id="appDetailsModal" tabindex="-1" role="dialog" aria-labelledby="appDetailsModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header bg-primary text-white">
-                            <h5 class="modal-title" id="appDetailsModalLabel">Détails de l'application</h5>
-                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" id="appDetailsContent">
-                            <!-- Dynamic content will be inserted here -->
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                            <a href="#" class="btn btn-primary" id="modalDownloadBtn">Télécharger</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+     
         </div>
     </div>
 
 
-    <!-- Compatibility Section -->
-    <div class="compatibility-section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-center">
-                    <div>
-                        <h2 class="font-weight-bold mb-4">Guide d'Installation</h2>
-                        <p class="lead mb-4">Suivez nos guides étape par étape pour configurer votre application IPTV</p>
-                        <div class="installation-steps" id="installationSteps">
-                            <!-- Steps will be inserted here by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="compatibility-devices">
-                        <img src="images/devices-combo.png" alt="Devices" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <div id="flt-btn" class="stk-act d-flex flex-row align-items-center">
         <div class="rd-act"><a rel="noreferrer" href="payment.html" class="txt-act floating">Obtenir
