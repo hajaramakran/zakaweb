@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: "IPTV Smarters Pro",
-            logo: "images/app2.jpg",
+            logo: "images/app1.jpg",
             description: "Application complète avec support VOD et série TV",
             downloads: {
                 windows: "#",
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: "TiviMate",
-            logo: "images/app3.jpg",
+            logo: "images/app1.jpg",
             description: "Lecteur IPTV premium pour Android TV",
             downloads: {
                 android: "#"
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: "Perfect Player",
-            logo: "images/app4.jpg",
+            logo: "images/app1.jpg",
             description: "Lecteur IPTV pour Android et Firestick",
             downloads: {
                 android: "#",
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: "Kodi",
-            logo: "images/app5.jpg",
+            logo: "images/app1.jpg",
             description: "Media center avec support IPTV via addons",
             downloads: {
                 windows: "#",
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: "GSE Smart IPTV",
-            logo: "images/app6.jpg",
+            logo: "images/app1.jpg",
             description: "Lecteur IPTV multiplateforme",
             downloads: {
                 android: "#",
