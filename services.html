@@ -39,12 +39,25 @@
 
      <div class="hm-grd ms-sct hdr-sct">
         <div class="container">
-            <div class="row hdr-pnl align-items-center z-h">
-                <div class="col col-12 col-lg-3 text-center text-lg-left"> <a class="logo-ref" href="index.html">
+             <div class="row hdr-pnl align-items-center z-h d-flex justify-content-between flex-wrap flex-lg-nowrap">
+
+               <!-- Toggler on the left -->
+                <div class="col-auto d-lg-none">
+                    <button class="menu-toggler" aria-label="Toggle navigation">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+
+                <!-- Logo centered on small screens and aligned left on large -->
+                <div class="col text-center text-lg-left">
+                    <a class="logo-ref" href="index.html">
                         <img src="images/aerotv-logo.png" alt="logo">
                     </a>
                 </div>
 
+                <!-- Main nav hidden on mobile -->
                 <div class="col col-12 col-lg-6 text-center d-none d-lg-block">
                     <nav class="main-nav-center">
                         <ul>
@@ -57,16 +70,9 @@
                     </nav>
                 </div>
 
-                <div class="col col-12 col-lg-3 text-left d-lg-none"> 
-                    <button class="menu-toggler" aria-label="Toggle navigation">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </button>
-                </div>
+                <!-- Empty spacing for desktop alignment -->
+                <div class="col d-none d-lg-block"></div>
 
-                <div class="col col-12 col-lg-3 d-none d-lg-block">
-                    </div>
             </div>
             <div class="row">
                 <div class="col col-12 col-lg-6 z-h txt-hdr">
