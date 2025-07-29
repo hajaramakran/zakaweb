@@ -653,3 +653,15 @@ body.no-scroll {
 .form-footer button:hover {
   background-color: #a30f0f;
 }
+
+
+@media (max-width: 991.98px) {
+    .mn-tlt {
+      padding: 30px 15px !important; /* smaller padding for mobile */
+      text-align: center !important;
+    }
+
+    .i-crc-blk img {
+      padding-left: 0 !important;
+    }
+  }
