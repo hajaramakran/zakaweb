@@ -662,7 +662,7 @@ body.no-scroll {
     }
 
     .i-crc-blk img {
-     
-        padding: 10px;
+        padding: 5 !important;
+        padding-left: 0 !important;
     }
   }
