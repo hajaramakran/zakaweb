@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
         appsContainer.removeChild(appsContainer.firstChild);
     }
 
-    // Create grid container
-    const appsGrid = document.createElement('div');
-    appsGrid.className = 'apps-grid row';
-
     // Sample data
     const iptvApps = [
         {
@@ -17,10 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             logo: "images/app1.jpg",
             description: "Application populaire pour Smart TV (Samsung, LG, etc.)",
             downloads: {
-                windows: "#",
-                android: "#",
-                ios: "#",
-                mac: "#"
+                android: "#"
             },
             rating: 4.5
         },
@@ -29,9 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             logo: "images/app1.jpg",
             description: "Application complète avec support VOD et série TV",
             downloads: {
-                windows: "#",
-                android: "#",
-                ios: "#"
+                android: "#"
             },
             rating: 4.7
         },
@@ -49,8 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             logo: "images/app1.jpg",
             description: "Lecteur IPTV pour Android et Firestick",
             downloads: {
-                android: "#",
-                firestick: "#"
+                android: "#"
             },
             rating: 4.3
         },
@@ -59,11 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             logo: "images/app1.jpg",
             description: "Media center avec support IPTV via addons",
             downloads: {
-                windows: "#",
-                android: "#",
-                ios: "#",
-                mac: "#",
-                linux: "#"
+                android: "#"
             },
             rating: 4.6
         },
@@ -72,55 +58,34 @@ document.addEventListener('DOMContentLoaded', function () {
             logo: "images/app1.jpg",
             description: "Lecteur IPTV multiplateforme",
             downloads: {
-                android: "#",
-                ios: "#"
+                android: "#"
             },
             rating: 4.4
         }
     ];
 
-    // Generate cards
-    iptvApps.forEach(app => {
+    iptvApps.forEach((app, index) => {
+        const downloadLink = Object.values(app.downloads)[0] || "#";
+
         const appCard = document.createElement('div');
-        appCard.className = 'col-md-6 col-lg-4 mb-4 app-card';
+        appCard.className = `col-md-6 col-lg-4 mb-4 app-card`;
 
         appCard.innerHTML = `
-            <div class="card h-100 shadow-sm border-0 rounded-lg overflow-hidden">
-                <div class="card-header bg-dark text-white py-3">
-                    <div class="d-flex align-items-center">
-                        <img src="${app.logo}" alt="${app.name}" class="app-logo mr-3" style="width: 40px; height: 40px; object-fit: cover;">
-                        <h5 class="mb-0">${app.name}</h5>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">${app.description}</p>
-                    <div class="rating mb-3">
+            <a href="${downloadLink}" class="text-decoration-none text-dark">
+                <div class="card h-100 text-center p-3">
+                    <img src="${app.logo}" alt="${app.name}" class="img-fluid rounded mb-3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                    <h5 class="font-weight-bold mb-2">${app.name}</h5>
+                    <p class="text-muted mb-2">${app.description}</p>
+                    <div class="rating">
                         ${renderStars(app.rating)}
-                        <span class="ml-2">${app.rating}/5</span>
+                        <span class="ml-1">${app.rating}/5</span>
                     </div>
                 </div>
-                <div class="card-footer bg-light">
-                    <div class="dropdown">
-                        <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdown-${app.name.replace(/\s+/g, '-')}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Télécharger
-                        </button>
-                        <div class="dropdown-menu w-100" aria-labelledby="dropdown-${app.name.replace(/\s+/g, '-')}">
-                            ${renderDownloadLinks(app.downloads)}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </a>
         `;
 
-        appsGrid.appendChild(appCard);
+        appsContainer.appendChild(appCard);
     });
-
-    appsContainer.appendChild(appsGrid);
-
-    // Bootstrap tooltips (if used)
-    if (typeof $ !== 'undefined' && $.fn.tooltip) {
-        $('[data-toggle="tooltip"]').tooltip();
-    }
 });
 
 function renderStars(rating) {
@@ -142,22 +107,4 @@ function renderStars(rating) {
     }
 
     return stars;
-}
-
-function renderDownloadLinks(downloads) {
-    let links = '';
-    const platforms = {
-        windows: '<i class="zmdi zmdi-windows mr-2"></i> Windows',
-        android: '<i class="zmdi zmdi-android mr-2"></i> Android',
-        ios: '<i class="zmdi zmdi-apple mr-2"></i> iOS',
-        mac: '<i class="zmdi zmdi-apple mr-2"></i> MacOS',
-        linux: '<i class="zmdi zmdi-linux mr-2"></i> Linux',
-        firestick: '<i class="zmdi zmdi-amazon mr-2"></i> Firestick'
-    };
-
-    for (const [platform, url] of Object.entries(downloads)) {
-        links += `<a class="dropdown-item" href="${url}">${platforms[platform] || platform}</a>`;
-    }
-
-    return links;
 }
