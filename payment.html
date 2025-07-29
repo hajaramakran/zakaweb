@@ -1,59 +1,27 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="BASE_URL" content="https://aero-tv.co">
-  <title>Paiement - Aero TV</title>
-  
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="https://cart.equinecomm.com//images/favicon.ico?id=d45c9ba4ca7676386d873541bdc8ff41" type="image/x-icon">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
-  
-  <!-- CSS -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="BASE_URL" content="https://aero-tv.co">
+
+  <!--<script src="js/js" data-uid-auto="uid_rsqvfvdtprvdzrhisewywfrqccypzs"></script>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link href="css/app.css" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <link href="css/main.css" rel="stylesheet">
+
+  <script src="js/app2.js" defer=""></script>
+  <link rel="shortcut icon" href="https://cart.equinecomm.com//images/favicon.ico?id=d45c9ba4ca7676386d873541bdc8ff41"
+    type="image/x-icon" inertia="">
+  <title inertia="">Paiement - Aero TV</title>
+ <!-- <script type="text/javascript" async="" src="./resources/f.txt"></script>-->
+  <script src="js/fonc2.js"></script>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
+<style>
   
-  <style>
-    :root {
-      --primary: #193694;
-      --primary-light: #87c8fe;
-      --accent: #e64a58;
-      --white: #ffffff;
-      --gray-light: #f5f7fa;
-      --gray: #e1e5ee;
-      --gray-dark: #6b7280;
-      --dark: #1f2937;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --rounded-sm: 0.25rem;
-      --rounded: 0.5rem;
-      --rounded-lg: 0.75rem;
-      --transition: all 0.3s ease;
-    }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      background-color: var(--primary-light);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-    
-     .logo-ref img {
+
+    .logo-ref img {
       width: 180px;
     }
 
@@ -74,7 +42,7 @@
     }
 
     .main-nav-center ul li a:hover {
-      color: #f4a0a0;
+      color: #e64a58;
     }
 
     .menu-toggler {
@@ -101,534 +69,15 @@
         display: flex;
       }
     }
-    
-  
-  
-    
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-    }
-    
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    
- 
-    
-    /* Main content */
-  
-    .checkout-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px 15px;
-      padding-top: 130px;
-    }
-    
-    .checkout-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-    
-    @media (min-width: 992px) {
-      .checkout-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    /* Order Summary */
-    .checkout-card {
-      background-color: var(--white);
-      border-radius: var(--rounded-lg);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: var(--transition);
-    }
-    
-    .checkout-card:hover {
-      box-shadow: var(--shadow-md);
-    }
-    
-    .checkout-card-header {
-      padding: 20px;
-      background: linear-gradient(112.68deg, var(--primary) -0.31%, var(--primary-light) 93.17%);
-      color: var(--white);
-    }
-    
-    .checkout-card-header h4 {
-      font-size: 18px;
-      font-weight: 600;
-    }
-    
-    .checkout-card-body {
-      padding: 20px;
-    }
-    
-    .order-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--gray);
-    }
-    
-    .order-item:last-child {
-      border-bottom: none;
-    }
-    
-    .order-item-label {
-      font-weight: 500;
-    }
-    
-    .order-item-value {
-      font-weight: 600;
-      color: var(--primary);
-    }
-    
-    .order-item-value i {
-      font-weight: 400;
-      font-size: 14px;
-      color: var(--gray-dark);
-    }
-    
-    .total-price {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 0 10px;
-      margin-top: 10px;
-      border-top: 1px solid var(--gray);
-    }
-    
-    .total-price span:first-child {
-      font-weight: 600;
-      font-size: 18px;
-    }
-    
-    .total-price span:last-child {
-      font-weight: 700;
-      font-size: 20px;
-      color: var(--primary);
-    }
-    
-    /* Promo Code */
-    .promo-code {
-      margin-top: 20px;
-    }
-    
-    .promo-code h4 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    
-    .promo-code p {
-      color: var(--gray-dark);
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-    
-    .promo-input-group {
-      display: flex;
-    }
-    
-    .promo-input {
-      flex: 1;
-      padding: 12px 15px;
-      border: 1px solid var(--gray);
-      border-radius: var(--rounded-sm) 0 0 var(--rounded-sm);
-      font-size: 14px;
-      transition: var(--transition);
-    }
-    
-    .promo-input:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(25, 54, 148, 0.1);
-    }
-    
-    .promo-button {
-      background-color: var(--primary);
-      color: var(--white);
-      border: none;
-      padding: 0 20px;
-      border-radius: 0 var(--rounded-sm) var(--rounded-sm) 0;
-      font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    
-    .promo-button:hover {
-      background-color: #1441b1;
-    }
-    
-    /* Checkout Form */
-    .checkout-form-card {
-      background-color: var(--white);
-      border-radius: var(--rounded-lg);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: var(--transition);
-    }
-    
-    .checkout-form-card:hover {
-      box-shadow: var(--shadow-md);
-    }
-    
-    .checkout-form-header {
-      padding: 20px;
-      background: linear-gradient(112.68deg, var(--primary) -0.31%, var(--primary-light) 93.17%);
-      color: var(--white);
-    }
-    
-    .checkout-form-header h4 {
-      font-size: 18px;
-      font-weight: 600;
-    }
-    
-    .checkout-form-body {
-      padding: 20px;
-    }
-    
-    /* Additional Features */
-    .additional-feature {
-      display: flex;
-      align-items: flex-start;
-      padding: 15px;
-      margin-bottom: 15px;
-      border: 1px solid var(--gray);
-      border-radius: var(--rounded);
-      transition: var(--transition);
-      cursor: pointer;
-    }
-    
-    .additional-feature:hover {
-      border-color: var(--primary);
-    }
-    
-    .checkbox-control {
-      margin-right: 15px;
-      margin-top: 3px;
-    }
-    
-    .checkbox {
-      width: 18px;
-      height: 18px;
-      accent-color: var(--primary);
-      cursor: pointer;
-    }
-    
-    .feature-content {
-      flex: 1;
-    }
-    
-    .feature-text {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
-    }
-    
-    .feature-title {
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-    }
-    
-    .recommended {
-      background-color: var(--primary);
-      color: var(--white);
-      font-size: 12px;
-      padding: 2px 8px;
-      border-radius: 20px;
-      margin-left: 10px;
-    }
-    
-    .feature-price {
-      font-weight: 600;
-      color: var(--primary);
-    }
-    
-    .feature-price span {
-      font-weight: 400;
-      font-size: 14px;
-      color: var(--gray-dark);
-    }
-    
-    .feature-description {
-      color: var(--gray-dark);
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    
-    /* Form Inputs */
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-    
-    @media (min-width: 576px) {
-      .form-row {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    .input-control {
-      position: relative;
-    }
-    
-    .input-control label {
-      position: absolute;
-      top: 12px;
-      left: 15px;
-      color: var(--gray-dark);
-      font-size: 14px;
-      pointer-events: none;
-      transition: var(--transition);
-      background-color: var(--white);
-      padding: 0 5px;
-    }
-    
-    .input-control input,
-    .input-control select {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid var(--gray);
-      border-radius: var(--rounded-sm);
-      font-size: 14px;
-      transition: var(--transition);
-    }
-    
-    .input-control input:focus,
-    .input-control select:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(25, 54, 148, 0.1);
-    }
-    
-    .input-control input:focus + label,
-    .input-control input:not(:placeholder-shown) + label,
-    .input-control select:focus + label,
-    .input-control select:not(:placeholder-shown) + label {
-      top: -8px;
-      left: 10px;
-      font-size: 12px;
-      color: var(--primary);
-    }
-    
-    .input-control .icon {
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--gray-dark);
-      cursor: pointer;
-    }
-    
-    /* Payment Section */
-    .payment-section {
-      margin-top: 30px;
-    }
-    
-    .payment-title {
-      text-align: center;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-    
-    .payment-title span {
-      color: var(--primary);
-    }
-    
-    .payment-features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-    
-    .payment-feature {
-      text-align: center;
-      padding: 15px 10px;
-      background-color: var(--gray-light);
-      border-radius: var(--rounded-sm);
-    }
-    
-    .payment-feature img {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 10px;
-    }
-    
-    .payment-feature p {
-      font-size: 12px;
-      font-weight: 500;
-    }
-    
-    .payment-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    
-    .payment-icons li {
-      list-style: none;
-    }
-    
-    .payment-icons img {
-      height: 25px;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: var(--transition);
-    }
-    
-    .payment-icons img:hover {
-      filter: grayscale(0);
-      opacity: 1;
-    }
-    
-    /* Footer */
-    .footer {
-      background: linear-gradient(112.68deg, var(--primary) -0.31%, var(--primary-light) 93.17%);
-      color: var(--white);
-      padding: 40px 0 20px;
-    }
-    
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-    
-    .devices-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-    
-    @media (min-width: 576px) {
-      .devices-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .devices-grid {
-        grid-template-columns: repeat(7, 1fr);
-      }
-    }
-    
-    .device-item {
-      text-align: center;
-      transition: var(--transition);
-    }
-    
-    .device-item:hover {
-      transform: translateY(-5px);
-    }
-    
-    .device-item img {
-      width: 100%;
-      max-width: 80px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    
-    .footer-title {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 24px;
-      font-weight: 600;
-    }
-    
-    .footer-subtitle {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 16px;
-      opacity: 0.9;
-    }
-    
-    .footer-bottom {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    @media (min-width: 768px) {
-      .footer-bottom {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-    
-    .footer-copyright {
-      margin-bottom: 15px;
-      font-size: 14px;
-    }
-    
-    @media (min-width: 768px) {
-      .footer-copyright {
-        margin-bottom: 0;
-      }
-    }
-    
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-    
-    .footer-link {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 14px;
-      transition: var(--transition);
-    }
-    
-    .footer-link:hover {
-      color: var(--accent);
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .fade-in {
-      animation: fadeIn 0.5s ease forwards;
-    }
-    
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; }
-    .delay-5 { animation-delay: 0.5s; }
-  </style>
+
+</style>
 </head>
 
 <body>
-
-  <div data-v-32995f34="" class="header">
+ 
+    <div data-v-32995f34="" class="header">
       <div data-v-32995f34="" class="container">
-             <div class="row hdr-pnl align-items-center z-h d-flex justify-content-between flex-wrap flex-lg-nowrap">
+         <div class="row hdr-pnl align-items-center z-h d-flex justify-content-between flex-wrap flex-lg-nowrap">
                 <div class="col-auto d-lg-none"> 
                     <button class="menu-toggler" aria-label="Toggle navigation">
                         <span class="bar"></span>
@@ -645,11 +94,11 @@
                 <div style="padding-left: 90px;" class="col col-12 col-lg-6 text-center d-none d-lg-block">
                     <nav class="main-nav-center">
                         <ul >
-                            <li><a href="#accueil">Accueil</a></li>
-                            <li><a href="#offres">Offres</a></li>
-                            <li><a href="#fonctionnalites">Téléchargement</a></li>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="services.html">Offres</a></li>
+                            <li><a href="telechargements.html">Téléchargement</a></li>
                             <li><a href="#offres">BLOGAIDE</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -662,7 +111,7 @@
     </div>
      <div class="off-canvas-menu">
         <button class="close-menu" aria-label="Close menu">&times;</button>
-        <nav>
+        <nav style="padding-left: 10px; font-size: 16px">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Offres</a></li>
@@ -672,97 +121,67 @@
             </ul>
         </nav>
     </div>
-  <div class="overlay" id="overlay"></div>
-
-  <!-- Main Content -->
-  <main class="checkout-container" >
-    <div class="checkout-grid">
-      <!-- Order Summary -->
-      <div class="checkout-card fade-in">
-        <div class="checkout-card-header">
-          <h4>Votre Commande</h4>
-        </div>
-        <div class="checkout-card-body">
-          <div class="order-item">
-            <span class="order-item-label">Abonnement</span>
-            <span class="order-item-value"><strong>49€</strong><i> / 1 An</i></span>
-          </div>
-          <div class="order-item">
-            <span class="order-item-label">Connexion supplémentaire</span>
-            <span class="order-item-value"><strong>2.42€</strong><i> / Mois</i></span>
-          </div>
-          <div class="order-item">
-            <span class="order-item-label">Protection proxy</span>
-            <span class="order-item-value"><strong>1.67€</strong><i> / Mois</i></span>
-          </div>
-          <div class="total-price">
-            <span>Total</span>
-            <span>49€ <i> / 1 An</i></span>
-          </div>
-          
-          <div class="promo-code fade-in delay-1">
-            <h4>Avez-vous un code promo ?</h4>
-            <p>Si vous possédez un code promo, appliquez-le ci-après.</p>
-            <div class="promo-input-group">
-              <input type="text" class="promo-input" placeholder="Entrez votre code" maxlength="20">
-              <button class="promo-button">Appliquer</button>
+    <div data-v-32995f34="" style="background: linear-gradient(112.68deg, rgb(25, 54, 148) -0.31%, rgb(135, 200, 254) 93.17%);">
+      <div data-v-243de8d5="" class="checkout">
+        <div data-v-243de8d5="" class="container">
+          <div data-v-243de8d5="" class="checkout-order-promo">
+            <div data-v-243de8d5="" class="order">
+              <h4 data-v-243de8d5="">Votre Commande</h4>
+              <div data-v-243de8d5="" class="element"><span data-v-243de8d5="">Abonnement</span><span
+                  data-v-243de8d5=""><strong data-v-243de8d5="">49€</strong><i data-v-243de8d5=""> / 1 An</i></span>
+              </div><!----><!----><!---->
+              <div data-v-243de8d5="" class="total-price"><span data-v-243de8d5="">Total</span><span
+                  data-v-243de8d5="">49€ <i data-v-243de8d5=""> / 1 An</i></span></div>
+            </div>
+            <div data-v-243de8d5="" class="discount">
+              <h4 data-v-243de8d5="">Avez-vous un code promo ?</h4>
+              <p data-v-243de8d5="">Si vous possédez un code promo, appliquez-le ci-après.</p>
+              <div data-v-243de8d5="" class="code-input-container"><input data-v-243de8d5="" class="code-input"
+                  maxlength="20"><button data-v-243de8d5="" class="code-button">Appliquer</button></div><!----><!---->
             </div>
           </div>
-        </div>
-      </div>
-      
-      <!-- Checkout Form -->
-      <div class="checkout-form-card fade-in delay-2">
-        <div class="checkout-form-header">
-          <h4>Détails de facturation</h4>
-        </div>
-        <div class="checkout-form-body">
-          <div class="additional-feature">
-            <div class="checkbox-control">
-              <input type="checkbox" class="checkbox" id="additionalConnection">
-            </div>
-            <div class="feature-content">
-              <div class="feature-text">
-                <div class="feature-title">Connexion supplémentaire</div>
-                <div class="feature-price">2.42€ <span>/ Mois</span></div>
-              </div>
-              <p class="feature-description">Un appareil supplémentaire en même temps</p>
-            </div>
-          </div>
-          
-          <div class="additional-feature">
-            <div class="checkbox-control">
-              <input type="checkbox" class="checkbox" id="proxyProtection" checked>
-            </div>
-            <div class="feature-content">
-              <div class="feature-text">
-                <div class="feature-title">Protection proxy <div class="recommended">Recommandé</div></div>
-                <div class="feature-price">1.67€ <span>/ Mois</span></div>
-              </div>
-              <p class="feature-description">Un proxy intégré à votre abonnement qui empêchera votre FAI de suivre votre utilisation IPTV</p>
-            </div>
-          </div>
-          
-          <form>
-            <div class="form-row">
-              <div class="form-group">
-                <div class="input-control">
-                  <input type="text" id="firstName" required placeholder=" ">
-                  <label for="firstName">Prénom</label>
+          <div data-v-243de8d5="" class="checkout-form">
+            <div data-v-243de8d5="" class=""
+              lock-label="Merci de compléter votre paiement pour recevoir vos identifiants">
+              <h4 data-v-243de8d5="">Détails de facturation</h4><!----><!---->
+              <div data-v-243de8d5="" class="additional-feature">
+                <div data-v-243de8d5="" class="checkbox-control"><input data-v-243de8d5="" class="checkbox"
+                    type="checkbox"></div>
+                <div data-v-243de8d5="" class="feature-content">
+                  <div data-v-243de8d5="" class="feature-text">
+                    <div data-v-243de8d5="" class="feature-title">Connexion supplémentaire</div>
+                    <div data-v-243de8d5="" class="feature-price">2.42€ <span data-v-243de8d5="">/ Mois</span></div>
+                  </div>
+                  <p data-v-243de8d5="" class="feature-description">Un appareil supplémentaire en même temps</p>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="input-control">
-                  <input type="text" id="lastName" required placeholder=" ">
-                  <label for="lastName">Nom</label>
+              <div data-v-243de8d5="" class="additional-feature">
+                <div data-v-243de8d5="" class="checkbox-control"><input data-v-243de8d5="" class="checkbox"
+                    type="checkbox"></div>
+                <div data-v-243de8d5="" class="feature-content">
+                  <div data-v-243de8d5="" class="feature-text">
+                    <div data-v-243de8d5="" class="feature-title">Protection proxy <div data-v-243de8d5=""
+                        class="recommended">Recommandé</div>
+                    </div>
+                    <div data-v-243de8d5="" class="feature-price">1.67€ <span data-v-243de8d5="">/ Mois</span></div>
+                  </div>
+                  <p data-v-243de8d5="" class="feature-description">Un proxy intégré à votre abonnement qui empêchera
+                    votre FAI de suivre votre utilisation IPTV</p>
                 </div>
               </div>
-            </div>
-            
-            <div class="form-group">
-              <div class="input-control">
-                <select id="country" required class="focus">
-                                    <option data-v-5d197dc6="" value=""></option>
+              <div data-v-243de8d5="" class="name">
+                <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><!----><input
+                    data-v-73f03a18="" class="input" type="text"><label data-v-73f03a18="">Prénom</label>
+                  <p data-v-73f03a18="" class="error-message"></p>
+                </div>
+                <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><!----><input
+                    data-v-73f03a18="" class="input" type="text"><label data-v-73f03a18="">Nom</label>
+                  <p data-v-73f03a18="" class="error-message"></p>
+                </div>
+              </div>
+              <div data-v-5d197dc6="" data-v-243de8d5="" class="select-control required"><select data-v-5d197dc6=""
+                  class="select focus">
+                  <option data-v-5d197dc6="" value=""></option>
                   <option data-v-243de8d5="" value="AL">Albania</option>
                   <option data-v-243de8d5="" value="DZ">Algeria</option>
                   <option data-v-243de8d5="" value="AD">Andorra</option>
@@ -962,61 +381,73 @@
                   <option data-v-243de8d5="" value="YE">Yemen</option>
                   <option data-v-243de8d5="" value="ZM">Zambia</option>
                   <option data-v-243de8d5="" value="ZW">Zimbabwe</option>
-                </select>
-                <label for="country">Pays / Région</label>
+                </select><span data-v-5d197dc6="" class="clear">x</span><label data-v-5d197dc6="">Pays / Région</label>
+                <p data-v-5d197dc6="" class="error-message"></p>
               </div>
-            </div>
-            
-            <div class="form-group">
-              <div class="input-control">
-                <input type="tel" id="phone" required placeholder=" ">
-                <span class="icon zmdi zmdi-help" data-tippy-content="<div class='t-center'>Le numéro de téléphone est requis par <br/> la passerelle de paiement</div>"></span>
-                <label for="phone">Numéro de Téléphone</label>
+              <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><span data-v-73f03a18=""
+                  class="icon"
+                  data-tippy-content="&lt;div class=&#39;t-center&#39;&gt;Le numéro de téléphone est requis par &lt;br/&gt; la passerelle de paiement&lt;/div&gt;"
+                  aria-expanded="false">?</span><input data-v-73f03a18="" class="input" type="text"><label
+                  data-v-73f03a18="">Numéro de Téléphone</label>
+                <p data-v-73f03a18="" class="error-message"></p>
               </div>
-            </div>
-            
-            <div class="form-group">
-              <div class="input-control">
-                <input type="email" id="email" required placeholder=" ">
-                <label for="email">Adresse de Messagerie</label>
+              <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><!----><input data-v-73f03a18=""
+                  class="input" type="text"><label data-v-73f03a18="">Adresse de Messagerie</label>
+                <p data-v-73f03a18="" class="error-message"></p>
               </div>
-            </div>
+            </div><!---->
+            <div data-v-ebc99eee="" data-v-243de8d5="" class="paypal-container"><!---->
+              <div data-v-ebc99eee="">
+                <div id="zoid-paypal-buttons-uid_133f95073a_mja6mtu6mze"
+                  class="paypal-buttons paypal-buttons-context-iframe paypal-buttons-label-pay paypal-buttons-layout-horizontal"
+                  data-paypal-smart-button-version="5.0.496" style="height: 55px; transition: 0.2s ease-in-out;">
             
-            <div class="payment-section fade-in delay-3">
-              <div id="paypal-button-container"></div>
-              
-              <div class="payment-features">
-                <div class="payment-feature">
-                  <img src="images/shipping.png" alt="Livraison">
-                  <p>Livraison instantanée</p>
-                </div>
-                <div class="payment-feature">
-                  <img src="images/refund.png" alt="Remboursement">
-                  <p>Satisfait ou remboursé</p>
-                </div>
-                <div class="payment-feature">
-                  <img src="images/secure.png" alt="Sécurité">
-                  <p>Paiement sécurisé</p>
+               
+                  <div id="smart-menu" class="smart-menu"></div>
+                  <div id="installments-modal" class="installments-modal"></div><iframe
+                    name="__detect_close_uid_33cc54f244_mja6mtu6mze__" style="display: none;"
+                    src="./resources/saved_resource(1).html"></iframe>
                 </div>
               </div>
-              
-              <h5 class="payment-title">Paiement <span>Sécurisé</span> Garanti</h5>
-              
-              <ul class="payment-icons">
-                <li><img src="images/mcafee.png" alt="McAfee Secure"></li>
-                <li><img src="images/paypal.png" alt="PayPal"></li>
-                <li><img src="images/visa.png" alt="Visa"></li>
-                <li><img src="images/mastercard.png" alt="Mastercard"></li>
-                <li><img src="images/discover.png" alt="Discover"></li>
-                <li><img src="images/american_express.png" alt="American Express"></li>
+            </div>
+            <div data-v-243de8d5="" class="secure-payment">
+              <div data-v-243de8d5="" class="payment-features">
+                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
+                    src="images/shipping.png" alt="">
+                  <div data-v-243de8d5="" class="item-title">Livraison instantanée</div>
+                </div>
+                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
+                    src="images/refund.png" alt="">
+                  <div data-v-243de8d5="" class="item-title">Satisfait ou remboursé</div>
+                </div>
+                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
+                    src="images/secure.png" alt="">
+                  <div data-v-243de8d5="" class="item-title">Paiement sécurisé</div>
+                </div>
+              </div>
+              <div data-v-243de8d5="" class="payment-title">Paiement <span>Sécurisé</span> Garanti</div>
+              <ul data-v-243de8d5="" class="payment-icons">
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon lx"
+                    src="images/mcafee.png" alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon" src="images/paypal.png"
+                    alt=""></li><!---->
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon" src="images/visa.png"
+                    alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
+                    src="images/mastercard.png" alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
+                    src="images/discover.png" alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
+                    src="images/american_express.png" alt=""></li>
               </ul>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-  </main>
-  
+ 
+  </div>
+
   <div class="ln-grd-dk ms-sct sct-ftr">
         <div class="container">
             <div class="row blb-ctx d-none d-lg-block">
@@ -1102,84 +533,63 @@
         </div>
     </div>
 
-  <!-- Scripts -->
-  <script src="js/app.js"></script>
-  <script src="js/app2.js"></script>
-  <script src="js/fonc.js"></script>
-  <script src="js/fonc2.js"></script>
-  <script src="js/main.js"></script>
-  
+  <script async="" src="js/js(1)"></script>
   <script>
-    // Mobile menu toggle
-    const menuToggler = document.getElementById('menuToggler');
-    const offCanvasMenu = document.getElementById('offCanvasMenu');
-    const closeMenu = document.getElementById('closeMenu');
-    const overlay = document.getElementById('overlay');
-    
-    menuToggler.addEventListener('click', () => {
-      menuToggler.classList.toggle('active');
-      offCanvasMenu.classList.toggle('active');
-      overlay.classList.toggle('active');
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+
+    gtag('js', new Date());
+
+    gtag('set', 'linker', {
+      'domains': [
+        "aero-tv.me",
+        "mediablitz.info",
+        "pay.glowup-llp.me",
+        "pay.pet-paradise.me",
+        "pay.aberkane.co",
+        "pay.guard-solution.com",
+        "pay.masterunity.net",
+        "pay.mastering-makeup.me",
+        "pay.dice-gamming.me",
+        "pay.graphicraftstudio.me",
+        "pay.profitadvisors.me",
+        "pay.carsales101.me",
+        "pay.yogacerthub.me",
+        "pay.expertbrandguide.me",
+        "pay.gamedevwizard.me",
+        "pay.artfultoons.me",
+        "pay.officegurusguild.me"
+      ]
     });
-    
-    closeMenu.addEventListener('click', () => {
-      menuToggler.classList.remove('active');
-      offCanvasMenu.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-    
-    overlay.addEventListener('click', () => {
-      menuToggler.classList.remove('active');
-      offCanvasMenu.classList.remove('active');
-      overlay.classList.remove('active');
-    });
-    
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Close mobile menu if open
-          if (offCanvasMenu.classList.contains('active')) {
-            menuToggler.classList.remove('active');
-            offCanvasMenu.classList.remove('active');
-            overlay.classList.remove('active');
-          }
-        }
-      });
-    });
-    
-    // Form validation would go here
-    // PayPal button integration would go here
-    
-    // Animation on scroll
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.fade-in');
-      
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        
-        if (elementPosition < screenPosition) {
-          element.style.opacity = '1';
-          element.style.transform = 'translateY(0)';
-        }
-      });
-    };
-    
-    window.addEventListener('load', animateOnScroll);
-    window.addEventListener('scroll', animateOnScroll);
+
+    gtag('config', 'AW-692607698');
+
   </script>
+
+
+
+
+
+
+ <script src="js/main.js"></script>
+  <script src="js/app.js"></script>
+ <script src="js/fonc.js"></script>
+  <script defer="" src="js/vcd.js"
+    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+    data-cf-beacon="{&quot;rayId&quot;:&quot;965691c68eb73851&quot;,&quot;version&quot;:&quot;2025.7.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;793d5c5b56b4457d9d81ed0ba60b0ab4&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}"
+    crossorigin="anonymous"></script>
+
+  <iframe allow="join-ad-interest-group" data-tagging-id="AW-692607698" data-load-time="1753560931668" height="0"
+    width="0" src="./resources/692607698.html" style="display: none; visibility: hidden;"></iframe>
+  <div id="BE560273-5BCB-FA1C-3AC4-3602E326610D"></div><iframe height="0" width="0"
+    style="display: none; visibility: hidden;" src="./resources/saved_resource(2).html"></iframe>
+  <div id="inspect-element-top-layer" popover="auto" data-inspect-element="inspectElement"
+    style="pointer-events: none; border: unset; padding: 0px;"></div>
+      <div id="B0C4E6CD-A50B-1EBE-9A8D-06ACE0130202"></div>
+    <div id="inspect-element-top-layer" popover="auto" data-inspect-element="inspectElement"
+        style="pointer-events: none; border: unset; padding: 0px;"></div>
 </body>
 
 </html>
