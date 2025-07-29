@@ -738,7 +738,26 @@ body.no-scroll {
     animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
 }
+.download-apk-btn {
+    background: linear-gradient(135deg, #3f87a6, #ebf8e1);
+    color: #fff;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #00a8e8;
+    background-image: linear-gradient(135deg, #00a8e8 0%, #007ea7 100%);
+}
 
+.download-apk-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    background-image: linear-gradient(135deg, #007ea7 0%, #005377 100%);
+}
 .app-card:nth-child(1) { animation-delay: 0.1s; }
 .app-card:nth-child(2) { animation-delay: 0.2s; }
 .app-card:nth-child(3) { animation-delay: 0.3s; }
