@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         appCard.innerHTML = `
             <a href="${downloadLink}" class="text-decoration-none text-dark">
                 <div class="card h-100 text-center p-3">
-                    <img src="${app.logo}" alt="${app.name}" class="img-fluid rounded mb-3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px;">
+                    <img src="${app.logo}" alt="${app.name}" class="img-fluid rounded mb-3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 25px;">
                     <h5 class="font-weight-bold mb-2">${app.name}</h5>
                     <p class="text-muted mb-2">${app.description}</p>
                     <div class="rating">
