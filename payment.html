@@ -3,24 +3,20 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <meta name="BASE_URL" content="https://aero-tv.co">
-
-  <!--<script src="js/js" data-uid-auto="uid_rsqvfvdtprvdzrhisewywfrqccypzs"></script>-->
+  <meta name="BASE_URL" content="https://aero-tv.co">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link href="css/app.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-
+  <link href="css/main.css" rel="stylesheet">
   <script src="js/app2.js" defer=""></script>
   <link rel="shortcut icon" href="https://cart.equinecomm.com//images/favicon.ico?id=d45c9ba4ca7676386d873541bdc8ff41"
     type="image/x-icon" inertia="">
   <title inertia="">Paiement - Aero TV</title>
- <!-- <script type="text/javascript" async="" src="./resources/f.txt"></script>-->
   <script src="js/fonc2.js"></script>
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
-<style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   
-
+  <style>
     .logo-ref img {
       width: 180px;
     }
@@ -69,530 +65,672 @@
         display: flex;
       }
     }
-
-
- 
-</style>
-
+    
+    /* Modern Form Styles */
+    .checkout {
+      padding: 2rem 0;
+    }
+    
+    .checkout-order-promo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .order, .discount {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .order:hover, .discount:hover {
+      transform: translateY(-5px);
+    }
+    
+    .order h4, .discount h4 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .element, .total-price {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    
+    .total-price {
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-bottom: none;
+    }
+    
+    .discount p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .code-input-container {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .code-input {
+      flex: 1;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+    }
+    
+    .code-button {
+      padding: 0 1.5rem;
+      background: #e64a58;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    
+    .code-button:hover {
+      background: #d43a48;
+    }
+    
+    .checkout-form {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .checkout-form h4 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    
+    .additional-feature {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: background 0.3s;
+    }
+    
+    .additional-feature:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .checkbox-control {
+      display: flex;
+      align-items: center;
+    }
+    
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      accent-color: #e64a58;
+      cursor: pointer;
+    }
+    
+    .feature-content {
+      flex: 1;
+    }
+    
+    .feature-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    
+    .feature-title {
+      color: white;
+      font-weight: 500;
+    }
+    
+    .recommended {
+      display: inline-block;
+      background: #e64a58;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+    }
+    
+    .feature-price {
+      color: #e64a58;
+      font-weight: 600;
+    }
+    
+    .feature-description {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+    
+    .name {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .input-control, .select-control {
+      position: relative;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    
+    .input, .select {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+    
+    .input:focus, .select:focus {
+      outline: none;
+      border-color: #e64a58;
+      box-shadow: 0 0 0 2px rgba(230, 74, 88, 0.2);
+    }
+    
+    label {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      pointer-events: none;
+      background: white;
+      padding: 0 0.3rem;
+    }
+    
+    .input:focus + label,
+    .input:not(:placeholder-shown) + label,
+    .select:focus + label,
+    .select:not([value=""]) + label {
+      top: -0.6rem;
+      font-size: 0.75rem;
+      color: #e64a58;
+    }
+    
+    .icon {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
+      cursor: help;
+    }
+    
+    .secure-payment {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .payment-features {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+    }
+    
+    .item-icon {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .payment-title {
+      text-align: center;
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .payment-title span {
+      color: #e64a58;
+      font-weight: 600;
+    }
+    
+    .payment-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+    
+    .payment-icons img {
+      height: 30px;
+      filter: grayscale(100%) brightness(2);
+      transition: filter 0.3s;
+    }
+    
+    .payment-icons img:hover {
+      filter: none;
+    }
+    
+    .paypal-container {
+      margin: 2rem 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .name {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .payment-features {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .checkout-order-promo {
+        flex-direction: column;
+      }
+    }
+    
+    /* Animations */
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Floating animation for devices in footer */
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* Off-canvas menu styles */
+    .off-canvas-menu {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 280px;
+      height: 100%;
+      background: #193694;
+      z-index: 1000;
+      transition: left 0.3s ease;
+      padding: 1rem;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .off-canvas-menu.active {
+      left: 0;
+    }
+    
+    .close-menu {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      cursor: pointer;
+    }
+    
+    .off-canvas-menu nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 3rem;
+    }
+    
+    .off-canvas-menu nav ul li {
+      margin-bottom: 1rem;
+    }
+    
+    .off-canvas-menu nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    
+    .off-canvas-menu nav ul li a:hover {
+      color: #e64a58;
+    }
+    
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+    
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
 </head>
 
 <body>
- 
-    <div data-v-32995f34="" class="header">
-      <div data-v-32995f34="" class="container">
-         <div class="row hdr-pnl align-items-center z-h d-flex justify-content-between flex-wrap flex-lg-nowrap">
-                <div class="col-auto d-lg-none"> 
-                    <button class="menu-toggler" aria-label="Toggle navigation">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </button>
-                </div>
-                <div class="col text-center text-lg-left"> 
-                  <a class="logo-ref" href="index.html">
-                        <img src="images/aerotv-me-logo.png" alt="logo" style="width: 180px; margin-right: 30px;">
-                    </a>
-                </div>
+  <div class="header">
+    <div class="container">
+      <div class="row hdr-pnl align-items-center z-h d-flex justify-content-between flex-wrap flex-lg-nowrap">
+        <div class="col-auto d-lg-none"> 
+          <button class="menu-toggler" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+        <div class="col text-center text-lg-left"> 
+          <a class="logo-ref" href="index.html">
+            <img src="images/aerotv-me-logo.png" alt="logo" style="width: 180px; margin-right: 30px;">
+          </a>
+        </div>
 
-                <div style="padding-left: 90px;" class="col col-12 col-lg-6 text-center d-none d-lg-block">
-                    <nav class="main-nav-center">
-                        <ul >
-                            <li><a href="index.html">Accueil</a></li>
-                            <li><a href="services.html">Offres</a></li>
-                            <li><a href="telechargements.html">Téléchargement</a></li>
-                            <li><a href="#offres">BLOGAIDE</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
+        <div style="padding-left: 90px;" class="col col-12 col-lg-6 text-center d-none d-lg-block">
+          <nav class="main-nav-center">
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="services.html">Offres</a></li>
+              <li><a href="telechargements.html">Téléchargement</a></li>
+              <li><a href="#offres">BLOGAIDE</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
 
-                
-
-                <div class="col d-none d-lg-block"></div>
-            </div>
+        <div class="col d-none d-lg-block"></div>
       </div>
     </div>
-     <div class="off-canvas-menu">
-        <button class="close-menu" aria-label="Close menu">&times;</button>
-        <nav style="padding-left: 10px; font-size: 16px">
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Offres</a></li>
-                <li><a href="telechargements.html">Téléchargement</a></li>
-                <li><a href="#offres">BLOGAIDE</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div data-v-32995f34="" style="background: linear-gradient(112.68deg, rgb(25, 54, 148) -0.31%, rgb(135, 200, 254) 93.17%);">
-      <div data-v-243de8d5="" class="checkout">
-        <div data-v-243de8d5="" class="container">
-          <div data-v-243de8d5="" class="checkout-order-promo">
-            <div data-v-243de8d5="" class="order">
-              <h4 data-v-243de8d5="">Votre Commande</h4>
-              <div data-v-243de8d5="" class="element"><span data-v-243de8d5="">Abonnement</span><span
-                  data-v-243de8d5=""><strong data-v-243de8d5="">49€</strong><i data-v-243de8d5=""> / 1 An</i></span>
-              </div><!----><!----><!---->
-              <div data-v-243de8d5="" class="total-price"><span data-v-243de8d5="">Total</span><span
-                  data-v-243de8d5="">49€ <i data-v-243de8d5=""> / 1 An</i></span></div>
-            </div>
-            <div data-v-243de8d5="" class="discount">
-              <h4 data-v-243de8d5="">Avez-vous un code promo ?</h4>
-              <p data-v-243de8d5="">Si vous possédez un code promo, appliquez-le ci-après.</p>
-              <div data-v-243de8d5="" class="code-input-container"><input data-v-243de8d5="" class="code-input"
-                  maxlength="20"><button data-v-243de8d5="" class="code-button">Appliquer</button></div><!----><!---->
+  </div>
+  
+  <div class="off-canvas-menu">
+    <button class="close-menu" aria-label="Close menu">&times;</button>
+    <nav style="padding-left: 10px; font-size: 16px">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Offres</a></li>
+        <li><a href="telechargements.html">Téléchargement</a></li>
+        <li><a href="#offres">BLOGAIDE</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="menu-overlay"></div>
+  
+  <div style="background: linear-gradient(112.68deg, rgb(25, 54, 148) -0.31%, rgb(135, 200, 254) 93.17%);">
+    <div class="checkout">
+      <div class="container">
+        <div class="checkout-order-promo animate__animated animate__fadeIn">
+          <div class="order">
+            <h4>Votre Commande</h4>
+            <div class="element"><span>Abonnement</span><span><strong>49€</strong><i> / 1 An</i></span></div>
+            <div class="total-price"><span>Total</span><span>49€ <i> / 1 An</i></span></div>
+          </div>
+          <div class="discount">
+            <h4>Avez-vous un code promo ?</h4>
+            <p>Si vous possédez un code promo, appliquez-le ci-après.</p>
+            <div class="code-input-container">
+              <input class="code-input" maxlength="20" placeholder="Entrez votre code">
+              <button class="code-button">Appliquer</button>
             </div>
           </div>
-          <div data-v-243de8d5="" class="checkout-form">
-            <div data-v-243de8d5="" class=""
-              lock-label="Merci de compléter votre paiement pour recevoir vos identifiants">
-              <h4 data-v-243de8d5="">Détails de facturation</h4><!----><!---->
-              <div data-v-243de8d5="" class="additional-feature">
-                <div data-v-243de8d5="" class="checkbox-control"><input data-v-243de8d5="" class="checkbox"
-                    type="checkbox"></div>
-                <div data-v-243de8d5="" class="feature-content">
-                  <div data-v-243de8d5="" class="feature-text">
-                    <div data-v-243de8d5="" class="feature-title">Connexion supplémentaire</div>
-                    <div data-v-243de8d5="" class="feature-price">2.42€ <span data-v-243de8d5="">/ Mois</span></div>
-                  </div>
-                  <p data-v-243de8d5="" class="feature-description">Un appareil supplémentaire en même temps</p>
-                </div>
-              </div>
-              <div data-v-243de8d5="" class="additional-feature">
-                <div data-v-243de8d5="" class="checkbox-control"><input data-v-243de8d5="" class="checkbox"
-                    type="checkbox"></div>
-                <div data-v-243de8d5="" class="feature-content">
-                  <div data-v-243de8d5="" class="feature-text">
-                    <div data-v-243de8d5="" class="feature-title">Protection proxy <div data-v-243de8d5=""
-                        class="recommended">Recommandé</div>
-                    </div>
-                    <div data-v-243de8d5="" class="feature-price">1.67€ <span data-v-243de8d5="">/ Mois</span></div>
-                  </div>
-                  <p data-v-243de8d5="" class="feature-description">Un proxy intégré à votre abonnement qui empêchera
-                    votre FAI de suivre votre utilisation IPTV</p>
-                </div>
-              </div>
-              <div data-v-243de8d5="" class="name">
-                <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><!----><input
-                    data-v-73f03a18="" class="input" type="text"><label data-v-73f03a18="">Prénom</label>
-                  <p data-v-73f03a18="" class="error-message"></p>
-                </div>
-                <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><!----><input
-                    data-v-73f03a18="" class="input" type="text"><label data-v-73f03a18="">Nom</label>
-                  <p data-v-73f03a18="" class="error-message"></p>
-                </div>
-              </div>
-              <div data-v-5d197dc6="" data-v-243de8d5="" class="select-control required"><select data-v-5d197dc6=""
-                  class="select focus">
-                  <option data-v-5d197dc6="" value=""></option>
-                  <option data-v-243de8d5="" value="AL">Albania</option>
-                  <option data-v-243de8d5="" value="DZ">Algeria</option>
-                  <option data-v-243de8d5="" value="AD">Andorra</option>
-                  <option data-v-243de8d5="" value="AO">Angola</option>
-                  <option data-v-243de8d5="" value="AI">Anguilla</option>
-                  <option data-v-243de8d5="" value="AG">Antigua &amp; Barbuda</option>
-                  <option data-v-243de8d5="" value="AR">Argentina</option>
-                  <option data-v-243de8d5="" value="AM">Armenia</option>
-                  <option data-v-243de8d5="" value="AW">Aruba</option>
-                  <option data-v-243de8d5="" value="AU">Australia</option>
-                  <option data-v-243de8d5="" value="AT">Austria</option>
-                  <option data-v-243de8d5="" value="AZ">Azerbaijan</option>
-                  <option data-v-243de8d5="" value="BS">Bahamas</option>
-                  <option data-v-243de8d5="" value="BH">Bahrain</option>
-                  <option data-v-243de8d5="" value="BB">Barbados</option>
-                  <option data-v-243de8d5="" value="BE">Belgium</option>
-                  <option data-v-243de8d5="" value="BZ">Belize</option>
-                  <option data-v-243de8d5="" value="BJ">Benin</option>
-                  <option data-v-243de8d5="" value="BM">Bermuda</option>
-                  <option data-v-243de8d5="" value="BT">Bhutan</option>
-                  <option data-v-243de8d5="" value="BO">Bolivia</option>
-                  <option data-v-243de8d5="" value="BA">Bosnia &amp; Herzegovina</option>
-                  <option data-v-243de8d5="" value="BW">Botswana</option>
-                  <option data-v-243de8d5="" value="BR">Brazil</option>
-                  <option data-v-243de8d5="" value="VG">British Virgin Islands</option>
-                  <option data-v-243de8d5="" value="BN">Brunei</option>
-                  <option data-v-243de8d5="" value="BG">Bulgaria</option>
-                  <option data-v-243de8d5="" value="BF">Burkina Faso</option>
-                  <option data-v-243de8d5="" value="BI">Burundi</option>
-                  <option data-v-243de8d5="" value="KH">Cambodia</option>
-                  <option data-v-243de8d5="" value="CM">Cameroon</option>
-                  <option data-v-243de8d5="" value="CA">Canada</option>
-                  <option data-v-243de8d5="" value="CV">Cape Verde</option>
-                  <option data-v-243de8d5="" value="KY">Cayman Islands</option>
-                  <option data-v-243de8d5="" value="TD">Chad</option>
-                  <option data-v-243de8d5="" value="CL">Chile</option>
-                  <option data-v-243de8d5="" value="CN">China</option>
-                  <option data-v-243de8d5="" value="CO">Colombia</option>
-                  <option data-v-243de8d5="" value="KM">Comoros</option>
-                  <option data-v-243de8d5="" value="CG">Congo - Brazzaville</option>
-                  <option data-v-243de8d5="" value="CD">Congo - Kinshasa</option>
-                  <option data-v-243de8d5="" value="CK">Cook Islands</option>
-                  <option data-v-243de8d5="" value="CR">Costa Rica</option>
-                  <option data-v-243de8d5="" value="CI">Côte D’ivoire</option>
-                  <option data-v-243de8d5="" value="HR">Croatia</option>
-                  <option data-v-243de8d5="" value="CY">Cyprus</option>
-                  <option data-v-243de8d5="" value="CZ">Czech Republic</option>
-                  <option data-v-243de8d5="" value="DK">Denmark</option>
-                  <option data-v-243de8d5="" value="DJ">Djibouti</option>
-                  <option data-v-243de8d5="" value="DM">Dominica</option>
-                  <option data-v-243de8d5="" value="DO">Dominican Republic</option>
-                  <option data-v-243de8d5="" value="EC">Ecuador</option>
-                  <option data-v-243de8d5="" value="EG">Egypt</option>
-                  <option data-v-243de8d5="" value="SV">El Salvador</option>
-                  <option data-v-243de8d5="" value="ER">Eritrea</option>
-                  <option data-v-243de8d5="" value="EE">Estonia</option>
-                  <option data-v-243de8d5="" value="ET">Ethiopia</option>
-                  <option data-v-243de8d5="" value="FK">Falkland Islands</option>
-                  <option data-v-243de8d5="" value="FO">Faroe Islands</option>
-                  <option data-v-243de8d5="" value="FJ">Fiji</option>
-                  <option data-v-243de8d5="" value="FI">Finland</option>
-                  <option data-v-243de8d5="" value="FR">France</option>
-                  <option data-v-243de8d5="" value="GF">French Guiana</option>
-                  <option data-v-243de8d5="" value="PF">French Polynesia</option>
-                  <option data-v-243de8d5="" value="GA">Gabon</option>
-                  <option data-v-243de8d5="" value="GM">Gambia</option>
-                  <option data-v-243de8d5="" value="GE">Georgia</option>
-                  <option data-v-243de8d5="" value="DE">Germany</option>
-                  <option data-v-243de8d5="" value="GI">Gibraltar</option>
-                  <option data-v-243de8d5="" value="GR">Greece</option>
-                  <option data-v-243de8d5="" value="GL">Greenland</option>
-                  <option data-v-243de8d5="" value="GD">Grenada</option>
-                  <option data-v-243de8d5="" value="GP">Guadeloupe</option>
-                  <option data-v-243de8d5="" value="GT">Guatemala</option>
-                  <option data-v-243de8d5="" value="GN">Guinea</option>
-                  <option data-v-243de8d5="" value="GW">Guinea-bissau</option>
-                  <option data-v-243de8d5="" value="GY">Guyana</option>
-                  <option data-v-243de8d5="" value="HN">Honduras</option>
-                  <option data-v-243de8d5="" value="HK">Hong Kong Sar China</option>
-                  <option data-v-243de8d5="" value="HU">Hungary</option>
-                  <option data-v-243de8d5="" value="IS">Iceland</option>
-                  <option data-v-243de8d5="" value="IN">India</option>
-                  <option data-v-243de8d5="" value="ID">Indonesia</option>
-                  <option data-v-243de8d5="" value="IE">Ireland</option>
-                  <option data-v-243de8d5="" value="IL">Israel</option>
-                  <option data-v-243de8d5="" value="IT">Italy</option>
-                  <option data-v-243de8d5="" value="JM">Jamaica</option>
-                  <option data-v-243de8d5="" value="JP">Japan</option>
-                  <option data-v-243de8d5="" value="JO">Jordan</option>
-                  <option data-v-243de8d5="" value="KZ">Kazakhstan</option>
-                  <option data-v-243de8d5="" value="KE">Kenya</option>
-                  <option data-v-243de8d5="" value="KI">Kiribati</option>
-                  <option data-v-243de8d5="" value="KW">Kuwait</option>
-                  <option data-v-243de8d5="" value="KG">Kyrgyzstan</option>
-                  <option data-v-243de8d5="" value="LA">Laos</option>
-                  <option data-v-243de8d5="" value="LV">Latvia</option>
-                  <option data-v-243de8d5="" value="LS">Lesotho</option>
-                  <option data-v-243de8d5="" value="LI">Liechtenstein</option>
-                  <option data-v-243de8d5="" value="LT">Lithuania</option>
-                  <option data-v-243de8d5="" value="LU">Luxembourg</option>
-                  <option data-v-243de8d5="" value="MK">Macedonia</option>
-                  <option data-v-243de8d5="" value="MG">Madagascar</option>
-                  <option data-v-243de8d5="" value="MW">Malawi</option>
-                  <option data-v-243de8d5="" value="MY">Malaysia</option>
-                  <option data-v-243de8d5="" value="MV">Maldives</option>
-                  <option data-v-243de8d5="" value="ML">Mali</option>
-                  <option data-v-243de8d5="" value="MT">Malta</option>
-                  <option data-v-243de8d5="" value="MH">Marshall Islands</option>
-                  <option data-v-243de8d5="" value="MQ">Martinique</option>
-                  <option data-v-243de8d5="" value="MR">Mauritania</option>
-                  <option data-v-243de8d5="" value="MU">Mauritius</option>
-                  <option data-v-243de8d5="" value="YT">Mayotte</option>
-                  <option data-v-243de8d5="" value="MX">Mexico</option>
-                  <option data-v-243de8d5="" value="FM">Micronesia</option>
-                  <option data-v-243de8d5="" value="MD">Moldova</option>
-                  <option data-v-243de8d5="" value="MC">Monaco</option>
-                  <option data-v-243de8d5="" value="MN">Mongolia</option>
-                  <option data-v-243de8d5="" value="ME">Montenegro</option>
-                  <option data-v-243de8d5="" value="MS">Montserrat</option>
-                  <option data-v-243de8d5="" value="MA">Morocco</option>
-                  <option data-v-243de8d5="" value="MZ">Mozambique</option>
-                  <option data-v-243de8d5="" value="NA">Namibia</option>
-                  <option data-v-243de8d5="" value="NR">Nauru</option>
-                  <option data-v-243de8d5="" value="NP">Nepal</option>
-                  <option data-v-243de8d5="" value="NL">Netherlands</option>
-                  <option data-v-243de8d5="" value="NC">New Caledonia</option>
-                  <option data-v-243de8d5="" value="NZ">New Zealand</option>
-                  <option data-v-243de8d5="" value="NI">Nicaragua</option>
-                  <option data-v-243de8d5="" value="NE">Niger</option>
-                  <option data-v-243de8d5="" value="NG">Nigeria</option>
-                  <option data-v-243de8d5="" value="NU">Niue</option>
-                  <option data-v-243de8d5="" value="NF">Norfolk Island</option>
-                  <option data-v-243de8d5="" value="NO">Norway</option>
-                  <option data-v-243de8d5="" value="OM">Oman</option>
-                  <option data-v-243de8d5="" value="PW">Palau</option>
-                  <option data-v-243de8d5="" value="PA">Panama</option>
-                  <option data-v-243de8d5="" value="PG">Papua New Guinea</option>
-                  <option data-v-243de8d5="" value="PY">Paraguay</option>
-                  <option data-v-243de8d5="" value="PE">Peru</option>
-                  <option data-v-243de8d5="" value="PH">Philippines</option>
-                  <option data-v-243de8d5="" value="PN">Pitcairn Islands</option>
-                  <option data-v-243de8d5="" value="PL">Poland</option>
-                  <option data-v-243de8d5="" value="PT">Portugal</option>
-                  <option data-v-243de8d5="" value="QA">Qatar</option>
-                  <option data-v-243de8d5="" value="RE">Réunion</option>
-                  <option data-v-243de8d5="" value="RO">Romania</option>
-                  <option data-v-243de8d5="" value="RW">Rwanda</option>
-                  <option data-v-243de8d5="" value="WS">Samoa</option>
-                  <option data-v-243de8d5="" value="SM">San Marino</option>
-                  <option data-v-243de8d5="" value="ST">São Tomé &amp; Príncipe</option>
-                  <option data-v-243de8d5="" value="SA">Saudi Arabia</option>
-                  <option data-v-243de8d5="" value="SN">Senegal</option>
-                  <option data-v-243de8d5="" value="RS">Serbia</option>
-                  <option data-v-243de8d5="" value="SC">Seychelles</option>
-                  <option data-v-243de8d5="" value="SL">Sierra Leone</option>
-                  <option data-v-243de8d5="" value="SG">Singapore</option>
-                  <option data-v-243de8d5="" value="SK">Slovakia</option>
-                  <option data-v-243de8d5="" value="SI">Slovenia</option>
-                  <option data-v-243de8d5="" value="SB">Solomon Islands</option>
-                  <option data-v-243de8d5="" value="SO">Somalia</option>
-                  <option data-v-243de8d5="" value="ZA">South Africa</option>
-                  <option data-v-243de8d5="" value="KR">South Korea</option>
-                  <option data-v-243de8d5="" value="ES">Spain</option>
-                  <option data-v-243de8d5="" value="LK">Sri Lanka</option>
-                  <option data-v-243de8d5="" value="SH">St. Helena</option>
-                  <option data-v-243de8d5="" value="KN">St. Kitts &amp; Nevis</option>
-                  <option data-v-243de8d5="" value="LC">St. Lucia</option>
-                  <option data-v-243de8d5="" value="PM">St. Pierre &amp; Miquelon</option>
-                  <option data-v-243de8d5="" value="VC">St. Vincent &amp; Grenadines</option>
-                  <option data-v-243de8d5="" value="SR">Suriname</option>
-                  <option data-v-243de8d5="" value="SJ">Svalbard &amp; Jan Mayen</option>
-                  <option data-v-243de8d5="" value="SZ">Swaziland</option>
-                  <option data-v-243de8d5="" value="SE">Sweden</option>
-                  <option data-v-243de8d5="" value="CH">Switzerland</option>
-                  <option data-v-243de8d5="" value="TW">Taiwan</option>
-                  <option data-v-243de8d5="" value="TJ">Tajikistan</option>
-                  <option data-v-243de8d5="" value="TZ">Tanzania</option>
-                  <option data-v-243de8d5="" value="TH">Thailand</option>
-                  <option data-v-243de8d5="" value="TG">Togo</option>
-                  <option data-v-243de8d5="" value="TO">Tonga</option>
-                  <option data-v-243de8d5="" value="TT">Trinidad &amp; Tobago</option>
-                  <option data-v-243de8d5="" value="TN">Tunisia</option>
-                  <option data-v-243de8d5="" value="TM">Turkmenistan</option>
-                  <option data-v-243de8d5="" value="TC">Turks &amp; Caicos Islands</option>
-                  <option data-v-243de8d5="" value="TV">Tuvalu</option>
-                  <option data-v-243de8d5="" value="UG">Uganda</option>
-                  <option data-v-243de8d5="" value="UA">Ukraine</option>
-                  <option data-v-243de8d5="" value="AE">United Arab Emirates</option>
-                  <option data-v-243de8d5="" value="GB">United Kingdom</option>
-                  <option data-v-243de8d5="" value="US">United States</option>
-                  <option data-v-243de8d5="" value="UY">Uruguay</option>
-                  <option data-v-243de8d5="" value="VU">Vanuatu</option>
-                  <option data-v-243de8d5="" value="VA">Vatican City</option>
-                  <option data-v-243de8d5="" value="VE">Venezuela</option>
-                  <option data-v-243de8d5="" value="VN">Vietnam</option>
-                  <option data-v-243de8d5="" value="WF">Wallis &amp; Futuna</option>
-                  <option data-v-243de8d5="" value="YE">Yemen</option>
-                  <option data-v-243de8d5="" value="ZM">Zambia</option>
-                  <option data-v-243de8d5="" value="ZW">Zimbabwe</option>
-                </select><span data-v-5d197dc6="" class="clear">x</span><label data-v-5d197dc6="">Pays / Région</label>
-                <p data-v-5d197dc6="" class="error-message"></p>
-              </div>
-              <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><span data-v-73f03a18=""
-                  class="icon"
-                  data-tippy-content="&lt;div class=&#39;t-center&#39;&gt;Le numéro de téléphone est requis par &lt;br/&gt; la passerelle de paiement&lt;/div&gt;"
-                  aria-expanded="false">?</span><input data-v-73f03a18="" class="input" type="text"><label
-                  data-v-73f03a18="">Numéro de Téléphone</label>
-                <p data-v-73f03a18="" class="error-message"></p>
-              </div>
-              <div data-v-73f03a18="" data-v-243de8d5="" class="input-control required"><!----><input data-v-73f03a18=""
-                  class="input" type="text"><label data-v-73f03a18="">Adresse de Messagerie</label>
-                <p data-v-73f03a18="" class="error-message"></p>
-              </div>
-            </div><!---->
-            <div data-v-ebc99eee="" data-v-243de8d5="" class="paypal-container"><!---->
-              <div data-v-ebc99eee="">
-                <div id="zoid-paypal-buttons-uid_133f95073a_mja6mtu6mze"
-                  class="paypal-buttons paypal-buttons-context-iframe paypal-buttons-label-pay paypal-buttons-layout-horizontal"
-                  data-paypal-smart-button-version="5.0.496" style="height: 55px; transition: 0.2s ease-in-out;">
+        </div>
+        
+        <div class="checkout-form animate__animated animate__fadeIn">
+          <div lock-label="Merci de compléter votre paiement pour recevoir vos identifiants">
+            <h4>Détails de facturation</h4>
             
-               
-                  <div id="smart-menu" class="smart-menu"></div>
-                  <div id="installments-modal" class="installments-modal"></div><iframe
-                    name="__detect_close_uid_33cc54f244_mja6mtu6mze__" style="display: none;"
-                    src="./resources/saved_resource(1).html"></iframe>
+            <div class="additional-feature">
+              <div class="checkbox-control">
+                <input class="checkbox" type="checkbox" id="extra-connection">
+              </div>
+              <div class="feature-content">
+                <div class="feature-text">
+                  <div class="feature-title">Connexion supplémentaire</div>
+                  <div class="feature-price">2.42€ <span>/ Mois</span></div>
                 </div>
+                <p class="feature-description">Un appareil supplémentaire en même temps</p>
               </div>
             </div>
-            <div data-v-243de8d5="" class="secure-payment">
-              <div data-v-243de8d5="" class="payment-features">
-                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
-                    src="images/shipping.png" alt="">
-                  <div data-v-243de8d5="" class="item-title">Livraison instantanée</div>
-                </div>
-                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
-                    src="images/refund.png" alt="">
-                  <div data-v-243de8d5="" class="item-title">Satisfait ou remboursé</div>
-                </div>
-                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
-                    src="images/secure.png" alt="">
-                  <div data-v-243de8d5="" class="item-title">Paiement sécurisé</div>
-                </div>
+            
+            <div class="additional-feature">
+              <div class="checkbox-control">
+                <input class="checkbox" type="checkbox" id="proxy-protection">
               </div>
-              <div data-v-243de8d5="" class="payment-title">Paiement <span>Sécurisé</span> Garanti</div>
-              <ul data-v-243de8d5="" class="payment-icons">
-                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon lx"
-                    src="images/mcafee.png" alt=""></li>
-                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon" src="images/paypal.png"
-                    alt=""></li><!---->
-                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon" src="images/visa.png"
-                    alt=""></li>
-                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
-                    src="images/mastercard.png" alt=""></li>
-                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
-                    src="images/discover.png" alt=""></li>
-                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
-                    src="images/american_express.png" alt=""></li>
-              </ul>
+              <div class="feature-content">
+                <div class="feature-text">
+                  <div class="feature-title">Protection proxy <div class="recommended">Recommandé</div></div>
+                  <div class="feature-price">1.67€ <span>/ Mois</span></div>
+                </div>
+                <p class="feature-description">Un proxy intégré à votre abonnement qui empêchera votre FAI de suivre votre utilisation IPTV</p>
+              </div>
             </div>
+            
+            <div class="name">
+              <div class="input-control required">
+                <input class="input" type="text" id="first-name" required placeholder=" ">
+                <label for="first-name">Prénom</label>
+                <p class="error-message"></p>
+              </div>
+              <div class="input-control required">
+                <input class="input" type="text" id="last-name" required placeholder=" ">
+                <label for="last-name">Nom</label>
+                <p class="error-message"></p>
+              </div>
+            </div>
+            
+            <div class="select-control required">
+              <select class="select" id="country" required>
+                <option value=""></option>
+                <option value="FR">France</option>
+                <option value="BE">Belgium</option>
+                <option value="CA">Canada</option>
+                <option value="CH">Switzerland</option>
+                <!-- Other country options remain the same -->
+              </select>
+              <label for="country">Pays / Région</label>
+              <p class="error-message"></p>
+            </div>
+            
+            <div class="input-control required">
+              <span class="icon zmdi zmdi-help" data-tippy-content="<div class='t-center'>Le numéro de téléphone est requis par <br/> la passerelle de paiement</div>"></span>
+              <input class="input" type="tel" id="phone" required placeholder=" ">
+              <label for="phone">Numéro de Téléphone</label>
+              <p class="error-message"></p>
+            </div>
+            
+            <div class="input-control required">
+              <input class="input" type="email" id="email" required placeholder=" ">
+              <label for="email">Adresse de Messagerie</label>
+              <p class="error-message"></p>
+            </div>
+          </div>
+          
+          <div class="paypal-container">
+            <div>
+              <div id="zoid-paypal-buttons-uid_133f95073a_mja6mtu6mze" class="paypal-buttons paypal-buttons-context-iframe paypal-buttons-label-pay paypal-buttons-layout-horizontal" style="height: 55px; transition: 0.2s ease-in-out;">
+                <div id="smart-menu" class="smart-menu"></div>
+                <div id="installments-modal" class="installments-modal"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="secure-payment">
+            <div class="payment-features">
+              <div class="item">
+                <img class="item-icon" src="images/shipping.png" alt="">
+                <div class="item-title">Livraison instantanée</div>
+              </div>
+              <div class="item">
+                <img class="item-icon" src="images/refund.png" alt="">
+                <div class="item-title">Satisfait ou remboursé</div>
+              </div>
+              <div class="item">
+                <img class="item-icon" src="images/secure.png" alt="">
+                <div class="item-title">Paiement sécurisé</div>
+              </div>
+            </div>
+            <div class="payment-title">Paiement <span>Sécurisé</span> Garanti</div>
+            <ul class="payment-icons">
+              <li><img class="icon lx" src="images/mcafee.png" alt="McAfee Secure"></li>
+              <li><img class="icon" src="images/paypal.png" alt="PayPal"></li>
+              <li><img class="icon" src="images/visa.png" alt="Visa"></li>
+              <li><img class="icon" src="images/mastercard.png" alt="Mastercard"></li>
+              <li><img class="icon" src="images/discover.png" alt="Discover"></li>
+              <li><img class="icon" src="images/american_express.png" alt="American Express"></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
- 
   </div>
 
   <div class="ln-grd-dk ms-sct sct-ftr">
-        <div class="container">
-            <div class="row blb-ctx d-none d-lg-block">
-                <div class="blb-item blb-001 floating"><img
-                        src="images/device-aerotv-browser.png"
-                        alt="Aero TV Browser"></div>
-                <div class="blb-item blb-002 floating"><img
-                        src="images/device-aerotv-amazone.png"
-                        alt="Aero TV Amazone Prime"></div>
-                <div class="blb-item blb-003 floating"><img
-                        src="images/device-aerotv-windows.png"
-                        alt="Aero TV Windows"></div>
-                <div class="blb-item blb-004 floating"><img
-                        src="images/device-aerotv-apple.png"
-                        alt="Aero TV Apple"></div>
-                <div class="blb-item blb-005 floating"><img
-                        src="images/device-aerotv-lg.png"
-                        alt="Aero TV LG"></div>
-                <div class="blb-item blb-006 floating"><img
-                        src="images/device-aerotv-plex.png"
-                        alt="Aero TV PLEX"></div>
-                <div class="blb-item blb-007 floating"><img
-                        src="images/device-aerotv-android.png"
-                        alt="Aero TV Android"></div>
-            </div>
-            <div class="row ftr-txt">
-                <div class="col col-12">
-                    <h2 class="tlt-ft h1">AERO TV COMPATIBLE AVEC TOUS VOS APPAREILS</h2>
-                    <h3 class="h4">Chez AERO TV, nous voulons être sûrs de couvrir tous vos appareils prférées</h3>
-                </div>
-            </div>
-            <div class="row blb-smp d-flex d-lg-none justify-content-center">
-                <div class="col col-3 blb-hdr">
-                    <div class="blb-item floating"><img
-                            src="images/device-aerotv-browser.png"
-                            alt="Aero TV Browser"></div>
-                </div>
-                <div class="col col-3 blb-hdr">
-                    <div class="blb-item floating"><img
-                            src="images/device-aerotv-amazone.png"
-                            alt="Aero TV Amazone Prime"></div>
-                </div>
-                <div class="col col-3 blb-hdr">
-                    <div class="blb-item floating"><img
-                            src="images/device-aerotv-windows.png"
-                            alt="Aero TV Windows"></div>
-                </div>
-                <div class="col col-3 blb-hdr">
-                    <div class="blb-item floating"><img
-                            src="images/device-aerotv-apple.png"
-                            alt="Aero TV Apple"></div>
-                </div>
-                <div class="col col-3 blb-hdr">
-                    <div class="blb-item floating"><img
-                            src="images/device-aerotv-lg.png"
-                            alt="Aero TV LG"></div>
-                </div>
-                <div class="col col-3 blb-hdr">
-                    <div class="blb-item floating"><img
-                            src="images/device-aerotv-plex.png"
-                            alt="Aero TV Plex"></div>
-                </div>
-                <div class="col col-3 blb-hdr">
-                    <div class="blb-item floating"><img
-                            src="images/device-aerotv-android.png"
-                            alt="Aero TV Android"></div>
-                </div>
-            </div>
+    <div class="container">
+      <div class="row blb-ctx d-none d-lg-block">
+        <div class="blb-item blb-001 floating"><img src="images/device-aerotv-browser.png" alt="Aero TV Browser"></div>
+        <div class="blb-item blb-002 floating"><img src="images/device-aerotv-amazone.png" alt="Aero TV Amazone Prime"></div>
+        <div class="blb-item blb-003 floating"><img src="images/device-aerotv-windows.png" alt="Aero TV Windows"></div>
+        <div class="blb-item blb-004 floating"><img src="images/device-aerotv-apple.png" alt="Aero TV Apple"></div>
+        <div class="blb-item blb-005 floating"><img src="images/device-aerotv-lg.png" alt="Aero TV LG"></div>
+        <div class="blb-item blb-006 floating"><img src="images/device-aerotv-plex.png" alt="Aero TV PLEX"></div>
+        <div class="blb-item blb-007 floating"><img src="images/device-aerotv-android.png" alt="Aero TV Android"></div>
+      </div>
+      <div class="row ftr-txt">
+        <div class="col col-12">
+          <h2 class="tlt-ft h1">AERO TV COMPATIBLE AVEC TOUS VOS APPAREILS</h2>
+          <h3 class="h4">Chez AERO TV, nous voulons être sûrs de couvrir tous vos appareils prférées</h3>
         </div>
-        <div class="ln-grd-dk ms-sct sct-ftr">
-            <div class="container pt-5">
-                <div class="row ftr-ctx align-items-center">
-                    <div class="col col-12 pl-md-0 col-md-4 text-center text-md-left">
-                        <p class="mb-3 mb-md-0">© 2023 - AERO TV - contact@aerotv.me</p>
-                    </div>
-                    <div
-                        class="col ftr-menu text-center col-12 pr-md-0 col-md-8 d-flex flex-column flex-md-row justify-content-center justify-content-md-end">
-                        <a class="ftr-lk ml-3 pb-3 pb-md-0" href="https://aero-tv.co/fr/privacy">Politique de
-                            Confidentialité</a><a class="ftr-lk ml-3 pb-3 pb-md-0"
-                            href="https://aero-tv.co/fr/terms">Termes et Conditions</a></div>
-                </div>
-            </div>
+      </div>
+      <div class="row blb-smp d-flex d-lg-none justify-content-center">
+        <div class="col col-3 blb-hdr">
+          <div class="blb-item floating"><img src="images/device-aerotv-browser.png" alt="Aero TV Browser"></div>
         </div>
+        <div class="col col-3 blb-hdr">
+          <div class="blb-item floating"><img src="images/device-aerotv-amazone.png" alt="Aero TV Amazone Prime"></div>
+        </div>
+        <div class="col col-3 blb-hdr">
+          <div class="blb-item floating"><img src="images/device-aerotv-windows.png" alt="Aero TV Windows"></div>
+        </div>
+        <div class="col col-3 blb-hdr">
+          <div class="blb-item floating"><img src="images/device-aerotv-apple.png" alt="Aero TV Apple"></div>
+        </div>
+        <div class="col col-3 blb-hdr">
+          <div class="blb-item floating"><img src="images/device-aerotv-lg.png" alt="Aero TV LG"></div>
+        </div>
+        <div class="col col-3 blb-hdr">
+          <div class="blb-item floating"><img src="images/device-aerotv-plex.png" alt="Aero TV Plex"></div>
+        </div>
+        <div class="col col-3 blb-hdr">
+          <div class="blb-item floating"><img src="images/device-aerotv-android.png" alt="Aero TV Android"></div>
+        </div>
+      </div>
     </div>
+    <div class="ln-grd-dk ms-sct sct-ftr">
+      <div class="container pt-5">
+        <div class="row ftr-ctx align-items-center">
+          <div class="col col-12 pl-md-0 col-md-4 text-center text-md-left">
+            <p class="mb-3 mb-md-0">© 2023 - AERO TV - contact@aerotv.me</p>
+          </div>
+          <div class="col ftr-menu text-center col-12 pr-md-0 col-md-8 d-flex flex-column flex-md-row justify-content-center justify-content-md-end">
+            <a class="ftr-lk ml-3 pb-3 pb-md-0" href="https://aero-tv.co/fr/privacy">Politique de Confidentialité</a>
+            <a class="ftr-lk ml-3 pb-3 pb-md-0" href="https://aero-tv.co/fr/terms">Termes et Conditions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script async="" src="js/js(1)"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() { dataLayer.push(arguments); }
-
-    gtag('js', new Date());
-
-    gtag('set', 'linker', {
-      'domains': [
-        "aero-tv.me",
-        "mediablitz.info",
-        "pay.glowup-llp.me",
-        "pay.pet-paradise.me",
-        "pay.aberkane.co",
-        "pay.guard-solution.com",
-        "pay.masterunity.net",
-        "pay.mastering-makeup.me",
-        "pay.dice-gamming.me",
-        "pay.graphicraftstudio.me",
-        "pay.profitadvisors.me",
-        "pay.carsales101.me",
-        "pay.yogacerthub.me",
-        "pay.expertbrandguide.me",
-        "pay.gamedevwizard.me",
-        "pay.artfultoons.me",
-        "pay.officegurusguild.me"
-      ]
-    });
-
-    gtag('config', 'AW-692607698');
-
-  </script>
-
-
-
-
-
-
- <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/app.js"></script>
- <script src="js/fonc.js"></script>
-  <script defer="" src="js/vcd.js"
-    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-    data-cf-beacon="{&quot;rayId&quot;:&quot;965691c68eb73851&quot;,&quot;version&quot;:&quot;2025.7.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;793d5c5b56b4457d9d81ed0ba60b0ab4&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}"
-    crossorigin="anonymous"></script>
-
-  <iframe allow="join-ad-interest-group" data-tagging-id="AW-692607698" data-load-time="1753560931668" height="0"
-    width="0" src="./resources/692607698.html" style="display: none; visibility: hidden;"></iframe>
-  <div id="BE560273-5BCB-FA1C-3AC4-3602E326610D"></div><iframe height="0" width="0"
-    style="display: none; visibility: hidden;" src="./resources/saved_resource(2).html"></iframe>
-  <div id="inspect-element-top-layer" popover="auto" data-inspect-element="inspectElement"
-    style="pointer-events: none; border: unset; padding: 0px;"></div>
-      <div id="B0C4E6CD-A50B-1EBE-9A8D-06ACE0130202"></div>
-    <div id="inspect-element-top-layer" popover="auto" data-inspect-element="inspectElement"
-        style="pointer-events: none; border: unset; padding: 0px;"></div>
+  <script src="js/fonc.js"></script>
+  
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggler = document.querySelector('.menu-toggler');
+      const closeMenu = document.querySelector('.close-menu');
+      const offCanvasMenu = document.querySelector('.off-canvas-menu');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      
+      menuToggler.addEventListener('click', function() {
+        offCanvasMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+      });
+      
+      closeMenu.addEventListener('click', function() {
+        offCanvasMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+      });
+      
+      menuOverlay.addEventListener('click', function() {
+        offCanvasMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+      });
+      
+      // Form validation would go here
+      const formInputs = document.querySelectorAll('.input, .select');
+      formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.parentNode.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+          if (this.value === '') {
+            this.parentNode.classList.remove('focused');
+          }
+        });
+        
+        // Check if input has value on page load
+        if (input.value !== '') {
+          input.parentNode.classList.add('focused');
+        }
+      });
+    });
+  </script>
 </body>
-
 </html>
