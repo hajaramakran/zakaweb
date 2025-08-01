@@ -52,7 +52,7 @@
  
       }
         .form-row input {
-          width: 100%;
+          width: auto;
         }
     }
 
