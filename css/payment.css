@@ -52,7 +52,7 @@
  
       }
         .form-row input {
-          width: auto;
+          width: 100%;
         }
     }
 
@@ -159,6 +159,7 @@
 
 .form-row {
   display: flex;
+width: 100%; 
   gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 16px;
