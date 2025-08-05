@@ -83,6 +83,20 @@
                   
                    
                 </div>
+             <div class="row mt-5 align-items-center">
+      <!-- Product Image -->
+      <div class="col-md-6 text-center">
+        <img id="product-image" src="" alt="Image du produit" class="img-fluid" style="max-width: 100%; display: none;">
+      </div>
+
+      <!-- Product Info -->
+      <div class="col-md-6">
+        <h1 id="product-title" style="display: none;">Chargement...</h1>
+        <p id="product-price" class="h4 text-primary mt-3"></p>
+        <p id="product-old-price" class="text-muted" style="text-decoration: line-through;"></p>
+        <button class="btn btn-primary mt-4" id="add-to-cart">Ajouter au panier</button>
+      </div>
+    </div>
                 <div class="col col-12 col-lg-6 i-crc-blk d-flex align-items-center">
                     <div class="i-crc-bg crc-001"></div>
                     <div class="i-crc-bg crc-002"></div>
@@ -90,7 +104,7 @@
                     <div class="i-crc-bg crc-004"></div>
                   
                
-            </div>
+                </div>
         </div>
     </div>
 
@@ -108,20 +122,18 @@
         </nav>
     </div>
     <div class="overlay"></div>
-    <div class="row mt-5 align-items-center">
-      <!-- Product Image -->
-      <div class="col-md-6 text-center">
-        <img id="product-image" src="" alt="Image du produit" class="img-fluid" style="max-width: 100%; display: none;">
-      </div>
-
-      <!-- Product Info -->
-      <div class="col-md-6">
-        <h1 id="product-title" style="display: none;">Chargement...</h1>
-        <p id="product-price" class="h4 text-primary mt-3"></p>
-        <p id="product-old-price" class="text-muted" style="text-decoration: line-through;"></p>
-        <button class="btn btn-primary mt-4" id="add-to-cart">Ajouter au panier</button>
+    <div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <h4 class="section-title">Details</h4>
+      <h2 class="section-heading">Description</h2>
+      <div id="product-details" class="product-description mt-4 text-left px-3 px-md-0">
+        <!-- Filled by JS -->
       </div>
     </div>
+  </div>
+</div>
+
   
     <div id="flt-btn" class="stk-act d-flex flex-row align-items-center">
         <div class="rd-act"><a rel="noreferrer" href="payment.html" class="txt-act floating">Obtenir
