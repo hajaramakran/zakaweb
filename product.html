@@ -31,25 +31,36 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
 <style>
-.product-image{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: left;
-    padding: 2rem;
+  .product-image img {
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
 
-  
-}
-.product-info{
-   
-    display: flex;
-   
-    align-items: right;
+  .product-info {
+    background-color: #fff;
     padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
 
-  
-}
+  .product-info h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .product-info {
+      margin-top: 2rem;
+      padding: 1.5rem;
+    }
+
+    .product-info h1 {
+      font-size: 1.5rem;
+    }
+  }
 </style>
+
 </head>
 
 <body>
@@ -94,15 +105,29 @@
             </div>
             <div class="row">
                
-                  
-                 
-                    <div class="row mt-5 align-items-center d-flex justify-content-center">
-                      <!-- Product Image -->
+                   <div class="col col-12 col-lg-6 z-h txt-hdr">
+                 <div class="container">
+  <div class="row d-flex align-items-center mt-5">
+    <!-- Product Image -->
+    <div class="col-12 col-lg-6 product-image text-center">
+      <img id="product-image" src="" alt="Image du produit" class="img-fluid" style="display: none;">
+    </div>
+
+    <!-- Product Info -->
+    <div class="col-12 col-lg-6 product-info">
+      <h1 id="product-title" style="display: none;">Chargement...</h1>
+      <p id="product-price" class="h4 text-primary mt-3"></p>
+      <p id="product-old-price" class="text-muted" style="text-decoration: line-through;"></p>
+      <button class="btn btn-primary mt-4" id="add-to-cart">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+                   <!-- <div class="row mt-5 align-items-center d-flex justify-content-center">
                       <div class="text-center product-image">
                         <img id="product-image" src="" alt="Image du produit" class="img-fluid" style="max-width: 100%; display: none;">
                       </div>
                 
-                      <!-- Product Info -->
                       <div class="produc-info">
                         <h1 id="product-title" style="display: none;">Chargement...</h1>
                         <p id="product-price" class="h4 text-primary mt-3"></p>
@@ -110,13 +135,10 @@
                         <button class="btn btn-primary mt-4" id="add-to-cart">Ajouter au panier</button>
                       </div>
                     </div>
+                       -->
 
-             
-
-             
-
-                  
-                   
+                   </div>
+ 
                 </div>
              
                 <div class="col col-12 col-lg-6 i-crc-blk d-flex align-items-center">
