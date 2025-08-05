@@ -38,19 +38,21 @@ function displayProducts() {
 
   grid.innerHTML = products.map(p => `
     <div class="col-sm-6 col-md-4">
-      <div class="product-card">
-        <div class="image-wrapper">
-          <img src="${p.image}" alt="${p.title}">
-          <button class="add-to-cart">Add To Cart</button>
-        </div>
-        <div class="product-details">
-          <div class="product-rating">★★★★★</div>
-          <h6 class="product-title">${p.title}</h6>
-          <div class="product-price">
-            ${p.old ? `<span class="old-price">${p.old}</span>` : ""}
-            <span class="new-price">${p.price}</span>
+      <a href="product.html?id=${p.id}" class="text-decoration-none text-dark">
+        <div class="product-card">
+          <div class="image-wrapper">
+            <img src="${p.image}" alt="${p.title}">
+            <button class="add-to-cart">Add To Cart</button>
           </div>
-        </div>
+          <div class="product-details">
+            <div class="product-rating">★★★★★</div>
+            <h6 class="product-title">${p.title}</h6>
+            <div class="product-price">
+              ${p.old ? `<span class="old-price">${p.old}</span>` : ""}
+              <span class="new-price">${p.price}</span>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   `).join('');
@@ -83,6 +85,7 @@ function setupPagination() {
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();
 });
+
 
 
 
