@@ -11,19 +11,17 @@
 let products = [];
 const perPage = 6;
 let currentPage = 1;
+let totalPages = 1;
 
-async function loadProducts() {
+
+async function loadProducts(page = 1) {
   try {
-    const res = await fetch("https://bisque-chinchilla-962517.hostingersite.com/wp-json/custom/v1/products");
+    const res = await fetch(`https://bisque-chinchilla-962517.hostingersite.com/wp-json/custom/v1/products?page=${page}&limit=${perPage}`);
     const data = await res.json();
-    
-    // Map data to match your structure (title, price, old, image)
-    products = data.map(p => ({
-      title: p.title,
-      price: p.price + " €",
-      old: p.regular_price !== p.price ? p.regular_price + " €" : null,
-      image: p.image
-    }));
+
+    products = data.products;
+    totalPages = data.totalPages;
+    currentPage = page;
 
     displayProducts();
     setupPagination();
@@ -32,6 +30,7 @@ async function loadProducts() {
     document.getElementById("productGrid").innerHTML = "<p>Failed to load products.</p>";
   }
 }
+
 
 
 function displayProducts() {
@@ -63,11 +62,9 @@ function displayProducts() {
 
 function setupPagination() {
   const pagination = document.getElementById("pagination");
-  const pages = Math.ceil(products.length / perPage);
-
   pagination.innerHTML = "";
 
-  for (let i = 1; i <= pages; i++) {
+  for (let i = 1; i <= totalPages; i++) {
     pagination.innerHTML += `
       <li class="page-item ${i === currentPage ? "active" : ""}">
         <a class="page-link" href="#">${i}</a>
@@ -77,14 +74,15 @@ function setupPagination() {
   document.querySelectorAll(".page-link").forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      currentPage = parseInt(e.target.innerText);
-      displayProducts();
-      setupPagination();
+      const page = parseInt(e.target.innerText);
+      loadProducts(page);
     });
   });
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();
 });
+
 
