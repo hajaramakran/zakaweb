@@ -1,4 +1,4 @@
-const products = [
+/*const products = [
   { title: "Gigabit Dual Band Whole Home Mesh WiFi", price: "$129", old: "$200", image: "images/product1.jpg" },
   { title: "Mesh WiFi Router with Gigabit", price: "$756", image: "images/prod2.jpg" },
   { title: "Wireless Router for the Entire Home", price: "$265", image: "images/prod3.jpg" },
@@ -6,10 +6,33 @@ const products = [
   { title: "Router with All-Inclusive Features", price: "$159", image: "images/prod5.jpg" },
   { title: "Gaming Router with Mesh Support", price: "$350", image: "images/prod6.jpg" },
   // Add more if needed
-];
+];*/
 
+let products = [];
 const perPage = 6;
 let currentPage = 1;
+
+async function loadProducts() {
+  try {
+    const res = await fetch("https://bisque-chinchilla-962517.hostingersite.com/wp-json/custom/v1/products");
+    const data = await res.json();
+    
+    // Map data to match your structure (title, price, old, image)
+    products = data.map(p => ({
+      title: p.title,
+      price: p.price + " €",
+      old: p.regular_price !== p.price ? p.regular_price + " €" : null,
+      image: p.image
+    }));
+
+    displayProducts();
+    setupPagination();
+  } catch (err) {
+    console.error("Error loading products:", err);
+    document.getElementById("productGrid").innerHTML = "<p>Failed to load products.</p>";
+  }
+}
+
 
 function displayProducts() {
   const grid = document.getElementById("productGrid");
@@ -62,6 +85,6 @@ function setupPagination() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayProducts();
-  setupPagination();
+  loadProducts();
 });
+
