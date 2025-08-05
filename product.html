@@ -73,19 +73,26 @@
                 <div class="col d-none d-lg-block"></div>
 
             </div>
-            <div class="row">
-                <div class="col col-12 col-lg-6 z-h txt-hdr">
-                  
-                     <img id="product-image"
-     src=""
-     style="width: 100%; padding-left: 100px; display: none;"
-     alt="Image du produit">
+            <div class="row align-items-center mt-5">
+      <!-- Left: Title and price -->
+      <div class="col-12 col-lg-6">
+        <h1 id="product-title" class="mn-tlt mb-3 text-center text-lg-left">
+          Chargement...
+        </h1>
+        <h3 id="product-price" class="text-center text-lg-left text-primary font-weight-bold mb-4">
+          <!-- You can set price dynamically -->
+        </h3>
+        <div id="product-details" class="product-description text-left px-3 px-md-0"></div>
+      </div>
 
-                </div>
-
-                  
-                   
-                </div>
+      <!-- Right: Product Image -->
+      <div class="col-12 col-lg-6 d-flex justify-content-center">
+        <img id="product-image"
+             src=""
+             alt="Image du produit"
+             style="max-width: 100%; display: none;" />
+      </div>
+    </div>
                 <div class="col col-12 col-lg-6 i-crc-blk d-flex align-items-center">
                     <div class="i-crc-bg crc-001"></div>
                     <div class="i-crc-bg crc-002"></div>
