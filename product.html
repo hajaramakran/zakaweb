@@ -31,91 +31,15 @@
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css">
 <style>
-  .product-section {
+.product-image{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: left;
     padding: 2rem;
-    background: #0a0a0a;
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
 
-  .product-image {
-    flex: 1 1 50%;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .product-image img {
-    max-width: 100%;
-    width: 90%;
-    transform: translateX(-5%);
-    border-radius: 10px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    display: none;
-  }
-
-  .product-info {
-    flex: 1 1 50%;
-    padding: 2rem;
-    z-index: 2;
-  }
-
-  .product-info h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    display: none;
-  }
-
-  .product-info .price {
-    font-size: 1.5rem;
-    color: #4caf50;
-    font-weight: bold;
-  }
-
-  .product-info .old-price {
-    text-decoration: line-through;
-    color: #888;
-    font-size: 1rem;
-  }
-
-  .product-info .btn {
-    background-color: #e50914;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 1.5rem;
-    border-radius: 4px;
-    transition: 0.3s ease;
-  }
-
-  .product-info .btn:hover {
-    background-color: #b00610;
-  }
-
-  @media (max-width: 768px) {
-    .product-image img {
-      width: 100%;
-      transform: none;
-    }
-
-    .product-info {
-      padding: 1rem;
-    }
-
-    .product-info h1 {
-      font-size: 1.5rem;
-    }
-
-    .product-info .price {
-      font-size: 1.2rem;
-    }
-  }
+  
+}
 </style>
 </head>
 
@@ -162,21 +86,23 @@
             <div class="row">
                 <div class="col col-12 col-lg-6 z-h txt-hdr">
                   
+                 
+                    <div class="row mt-5 align-items-center">
                       <!-- Product Image -->
-                     <div class="product-section">
-  <!-- Product Image -->
-  <div class="product-image">
-    <img id="product-image" src="" alt="Image du produit" class="img-fluid">
-  </div>
+                      <div class="col-md-6 text-center product-image">
+                        <img id="product-image" src="" alt="Image du produit" class="img-fluid" style="max-width: 100%; display: none;">
+                      </div>
+                
+                      <!-- Product Info -->
+                      <div class="col-md-6">
+                        <h1 id="product-title" style="display: none;">Chargement...</h1>
+                        <p id="product-price" class="h4 text-primary mt-3"></p>
+                        <p id="product-old-price" class="text-muted" style="text-decoration: line-through;"></p>
+                        <button class="btn btn-primary mt-4" id="add-to-cart">Ajouter au panier</button>
+                      </div>
+                    </div>
 
-  <!-- Product Info -->
-  <div class="product-info">
-    <h1 id="product-title">Chargement...</h1>
-    <p id="product-price" class="price"></p>
-    <p id="product-old-price" class="old-price"></p>
-    <button class="btn" id="add-to-cart">Ajouter au panier</button>
-  </div>
-</div>
+             
 
                 </div>
 
