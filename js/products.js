@@ -35,10 +35,8 @@ async function loadProducts(page = 1) {
 
 function displayProducts() {
   const grid = document.getElementById("productGrid");
-  const start = (currentPage - 1) * perPage;
-  const currentItems = products.slice(start, start + perPage);
 
-  grid.innerHTML = currentItems.map(p => `
+  grid.innerHTML = products.map(p => `
     <div class="col-sm-6 col-md-4">
       <div class="product-card">
         <div class="image-wrapper">
@@ -57,6 +55,7 @@ function displayProducts() {
     </div>
   `).join('');
 }
+
 
 
 
@@ -84,5 +83,6 @@ function setupPagination() {
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();
 });
+
 
 
