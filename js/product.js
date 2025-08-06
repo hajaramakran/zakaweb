@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(product => {
-        document.getElementById("product-skeleton").style.display = "none";
-document.getElementById("product-content").style.display = "flex";
+        document.getElementById("product-skeleton").classList.add("d-none");
+document.getElementById("product-content").classList.remove("d-none");
       // Show and fill product image
       const imgEl = document.getElementById("product-image");
       imgEl.src = product.image;
@@ -50,7 +50,7 @@ document.getElementById("product-content").style.display = "flex";
       });
     })
     .catch(err => {
-        document.getElementById("product-skeleton").style.display = "none";
+        document.getElementById("product-skeleton").classList.add("d-none");
 
       document.getElementById("product-details").innerHTML = `<p>${err.message}</p>`;
     });
