@@ -2,13 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
-  // Initially hide product content and show skeleton
-  document.getElementById("product-content").hidden = true;
-  document.getElementById("product-skeleton").hidden = false;
+  // Get references to elements
+  const skeletonEl = document.getElementById("product-skeleton");
+  const contentEl = document.getElementById("product-content");
+  const detailsEl = document.getElementById("product-details");
+
+  // Ensure initial state
+  skeletonEl.style.display = "flex"; // Show skeleton
+  contentEl.style.display = "none";  // Hide content
 
   if (!id) {
-    document.getElementById("product-skeleton").hidden = true;
-    document.getElementById("product-details").innerHTML = "<p>Invalid product ID.</p>";
+    skeletonEl.style.display = "none";
+    detailsEl.innerHTML = "<p>Invalid product ID.</p>";
     return;
   }
 
@@ -18,26 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(product => {
-      // Hide skeleton and show product content
-      document.getElementById("product-skeleton").hidden = true;
-      document.getElementById("product-content").hidden = false;
-
-      // Show and fill product image
-      const imgEl = document.getElementById("product-image");
-      imgEl.src = product.image;
-      imgEl.alt = product.title;
-      imgEl.style.display = "block";
-
-      // Set title
-      const titleEl = document.getElementById("product-title");
-      titleEl.textContent = product.title;
-      titleEl.style.display = "block";
-
-      // Set price
-      const priceEl = document.getElementById("product-price");
-      priceEl.textContent = `${product.price} €`;
-
-      // Show old price if different
+      // Fill product data
+      document.getElementById("product-image").src = product.image;
+      document.getElementById("product-title").textContent = product.title;
+      document.getElementById("product-price").textContent = `${product.price} €`;
+      
       const oldPriceEl = document.getElementById("product-old-price");
       if (product.price !== product.regular_price) {
         oldPriceEl.textContent = `${product.regular_price} €`;
@@ -45,21 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         oldPriceEl.style.display = "none";
       }
-
-      // Set description
-      const detailsEl = document.getElementById("product-details");
+      
       detailsEl.innerHTML = product.description;
 
-      // (Optional) Add to cart logic
+      // Switch visibility
+      skeletonEl.style.display = "none";  // Hide skeleton
+      contentEl.style.display = "flex";   // Show content
+
       document.getElementById("add-to-cart").addEventListener("click", () => {
         alert(`Produit "${product.title}" ajouté au panier.`);
-        // You can later hook this into real cart logic
       });
     })
     .catch(err => {
-      // Hide skeleton and show error
-      document.getElementById("product-skeleton").hidden = true;
-      document.getElementById("product-content").hidden = true;
-      document.getElementById("product-details").innerHTML = `<p>${err.message}</p>`;
+      skeletonEl.style.display = "none";
+      contentEl.style.display = "none";
+      detailsEl.innerHTML = `<p>${err.message}</p>`;
     });
 });
