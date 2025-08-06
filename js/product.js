@@ -13,8 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(product => {
-        document.getElementById("product-skeleton").classList.add("d-none");
-document.getElementById("product-content").classList.remove("d-none");
+        const skeleton = document.getElementById("product-skeleton");
+const content = document.getElementById("product-content");
+
+skeleton.classList.add("d-none");
+content.classList.remove("d-none");
+
+// Force display:block if needed to override d-flex or others
+content.classList.add("d-block"); 
+// Remove any conflicting class like d-flex or d-lg-flex
+content.classList.remove("d-flex");
+content.classList.remove("d-lg-flex");
+
       // Show and fill product image
       const imgEl = document.getElementById("product-image");
       imgEl.src = product.image;
