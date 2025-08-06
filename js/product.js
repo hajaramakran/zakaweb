@@ -2,7 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
+  // Initially hide product content and show skeleton
+  document.getElementById("product-content").hidden = true;
+  document.getElementById("product-skeleton").hidden = false;
+
   if (!id) {
+    document.getElementById("product-skeleton").hidden = true;
     document.getElementById("product-details").innerHTML = "<p>Invalid product ID.</p>";
     return;
   }
@@ -13,8 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(product => {
-       document.getElementById("product-skeleton").hidden = true;
-document.getElementById("product-content").hidden = false;
+      // Hide skeleton and show product content
+      document.getElementById("product-skeleton").hidden = true;
+      document.getElementById("product-content").hidden = false;
 
       // Show and fill product image
       const imgEl = document.getElementById("product-image");
@@ -51,8 +57,9 @@ document.getElementById("product-content").hidden = false;
       });
     })
     .catch(err => {
-        document.getElementById("product-skeleton").classList.add("d-none");
-
+      // Hide skeleton and show error
+      document.getElementById("product-skeleton").hidden = true;
+      document.getElementById("product-content").hidden = true;
       document.getElementById("product-details").innerHTML = `<p>${err.message}</p>`;
     });
 });
