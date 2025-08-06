@@ -54,6 +54,44 @@
     .product-description{
         padding-bottom: 100px;
     }
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  animation: shimmer 1.5s infinite linear;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 300px;
+}
+
+.skeleton-title {
+  width: 70%;
+  height: 30px;
+}
+
+.skeleton-price,
+.skeleton-old-price {
+  width: 40%;
+  height: 20px;
+}
+
+.skeleton-button {
+  width: 60%;
+  height: 40px;
+  margin-top: 10px;
+}
 
   @media (max-width: 768px) {
     .product-info {
@@ -118,6 +156,19 @@
                 <div class="z-h txt-hdr">
                  <div class="container">
                   <div class="row d-flex align-items-center mt-5">
+                      <!-- Skeleton Loader -->
+                        <div id="product-skeleton" class="row">
+                          <div class="col-12 col-lg-6 text-center mb-4">
+                            <div class="skeleton skeleton-image"></div>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                            <div class="skeleton skeleton-title mb-3"></div>
+                            <div class="skeleton skeleton-price mb-2"></div>
+                            <div class="skeleton skeleton-old-price mb-3"></div>
+                            <div class="skeleton skeleton-button"></div>
+                          </div>
+                        </div>
+
                     <!-- Product Image -->
                     <div class="col-12 col-lg-6 product-image text-center">
                       <img id="product-image" src="" alt="Image du produit" class="img-fluid" style="display: none;">
@@ -128,8 +179,8 @@
                       <h1 id="product-title" style="display: none; color: black">Chargement...</h1>
                       <p id="product-price" class="h4 text-secondary mt-3"></p>
                       <p id="product-old-price" class="text-muted" style="text-decoration: line-through;"></p>
-                        <a rel="noreferrer" href="#" class="btn-act  mt-3">
-                            <div id="add-to-cart" class="d-flex align-items-center">Ajouter au panier
+                        <a id="add-to-cart" rel="noreferrer" class="btn-act  mt-3">
+                            <div  class="d-flex align-items-center">Ajouter au panier
                               
                             </div>
                         </a>
