@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return res.json();
     })
     .then(product => {
+        document.getElementById("product-skeleton").style.display = "none";
+
       // Show and fill product image
       const imgEl = document.getElementById("product-image");
       imgEl.src = product.image;
@@ -48,6 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch(err => {
+        document.getElementById("product-skeleton").style.display = "none";
+
       document.getElementById("product-details").innerHTML = `<p>${err.message}</p>`;
     });
 });
