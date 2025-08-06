@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(product => {
         document.getElementById("product-skeleton").style.display = "none";
-
+document.getElementById("product-content").style.display = "flex";
       // Show and fill product image
       const imgEl = document.getElementById("product-image");
       imgEl.src = product.image;
