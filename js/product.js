@@ -39,7 +39,34 @@ document.addEventListener("DOMContentLoaded", () => {
       contentEl.style.display = "flex";   // Show content
 
       document.getElementById("add-to-cart").addEventListener("click", () => {
+         let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Check if product already in cart
+        const existing = cart.find(item => item.id === product.id);
+      
+        if (existing) {
+          existing.quantity += 1; // Increase quantity
+        } else {
+          cart.push({
+            id: product.id,
+            name: product.title,
+            quantity: 1
+          });
+        }
+      
+        localStorage.setItem("cart", JSON.stringify(cart));
+      
+        // Optional: alert
         alert(`Produit "${product.title}" ajouté au panier.`);
+      
+        // Update cart count badge (if visible)
+        const badge = document.getElementById("cartCount");
+        if (badge) {
+          badge.textContent = cart.length;
+          badge.classList.add("animate-badge");
+          setTimeout(() => badge.classList.remove("animate-badge"), 300);
+        }
+        //alert(`Produit "${product.title}" ajouté au panier.`);
       });
     })
     .catch(err => {
