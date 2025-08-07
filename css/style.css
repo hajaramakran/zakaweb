@@ -761,6 +761,31 @@ body.no-scroll {
     color: red;
     cursor: pointer;
   }
+.checkout-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background: #28a745;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.checkout-btn:hover:not(.disabled) {
+  background: #218838;
+}
+
+.checkout-btn.disabled {
+  background: #aaa;
+  pointer-events: none; /* disables clicks */
+  cursor: not-allowed;
+  color: #eee;
+}
 
   #cartCount.animate-badge {
     animation: pop 0.3s ease;
@@ -827,6 +852,7 @@ body.no-scroll {
 .app-card:nth-child(4) { animation-delay: 0.4s; }
 .app-card:nth-child(5) { animation-delay: 0.5s; }
 .app-card:nth-child(6) { animation-delay: 0.6s; }
+
 
 
 
