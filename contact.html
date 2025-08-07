@@ -72,9 +72,31 @@
 
                 <!-- Empty spacing for desktop alignment -->
                 <div class="col d-none d-lg-block"></div>
+               <!-- Cart button  -->
+                <div class="col-auto">
+                  <button class="btn btn-cart position-relative" id="cartToggleBtn">
+                    <i class="ml-3 zmdi zmdi-shopping-cart zmdi-hc-2x"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">
+                      0
+                    </span>
+                  </button>
+                </div>
+
 
           
             </div>
+
+              <!-- offcanvas cart -->
+            <div id="cartOffcanvas" class="offcanvas-cart">
+              <div class="cart-header">
+                <h4>Panier</h4>
+                <button id="closeCart" class="close-btn">&times;</button>
+              </div>
+              <div class="cart-body">
+                <ul id="cartItems"></ul>
+              </div>
+            </div>
+            <!-- offcanvas cart -->
             <div class="row">
                 <div class="col col-12 col-lg-6 z-h txt-hdr">
                     <h1 class="mn-tlt mb-2 mb-md-5 text-center text-lg-left" style="padding: 130px;">
@@ -284,5 +306,6 @@
  <script src="js/app.js"></script>
  <script src="js/fonc.js"></script>
  <script src="js/products.js"></script>
-    
+<script src="js/cart.js"></script>
 </html>
+
