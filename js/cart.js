@@ -19,6 +19,18 @@
     cartCount.textContent = cartItems.length;
     cartCount.classList.add('animate-badge');
     setTimeout(() => cartCount.classList.remove('animate-badge'), 300);
+
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    if (cartItems.length === 0) {
+      checkoutBtn.classList.add('disabled');
+      checkoutBtn.setAttribute('aria-disabled', 'true');
+      checkoutBtn.tabIndex = -1;
+    } else {
+      checkoutBtn.classList.remove('disabled');
+      checkoutBtn.removeAttribute('aria-disabled');
+      checkoutBtn.tabIndex = 0;
+    }
   }
 
   // Open cart
