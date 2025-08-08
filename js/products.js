@@ -1,21 +1,29 @@
-/*const products = [
-  { title: "Gigabit Dual Band Whole Home Mesh WiFi", price: "$129", old: "$200", image: "images/product1.jpg" },
-  { title: "Mesh WiFi Router with Gigabit", price: "$756", image: "images/prod2.jpg" },
-  { title: "Wireless Router for the Entire Home", price: "$265", image: "images/prod3.jpg" },
-  { title: "Gigabit Wireless Gaming Router", price: "$951", image: "images/prod4.jpg" },
-  { title: "Router with All-Inclusive Features", price: "$159", image: "images/prod5.jpg" },
-  { title: "Gaming Router with Mesh Support", price: "$350", image: "images/prod6.jpg" },
-  // Add more if needed
-];*/
-
 let products = [];
 const perPage = 6;
 let currentPage = 1;
 let totalPages = 1;
 
+function showLoadingPlaceholders() {
+  const grid = document.getElementById("productGrid");
+
+  //6card loading placeholders
+  grid.innerHTML = Array.from({ length: perPage }).map(() => `
+    <div class="col-sm-6 col-md-4">
+      <div class="product-card loading">
+        <div class="image-wrapper skeleton"></div>
+        <div class="product-details">
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text short"></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
 
 async function loadProducts(page = 1) {
   try {
+    showLoadingPlaceholders();
+
     const res = await fetch(`https://bisque-chinchilla-962517.hostingersite.com/wp-json/custom/v1/products?page=${page}&limit=${perPage}`);
     const data = await res.json();
 

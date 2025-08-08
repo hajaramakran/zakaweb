@@ -1,9 +1,35 @@
+function showProductSkeleton() {
+  const contentEl = document.getElementById("product-content");
+  const detailsEl = document.getElementById("product-details");
+
+  contentEl.style.display = "flex";
+  contentEl.innerHTML = `
+    <div class="col-12 col-lg-6 product-image text-center">
+      <div class="skeleton skeleton-img"></div>
+    </div>
+
+    <div class="col-12 col-lg-6 product-info">
+      <div class="skeleton skeleton-text title"></div>
+      <div class="skeleton skeleton-text price"></div>
+      <div class="skeleton skeleton-text short"></div>
+      <div class="skeleton skeleton-btn"></div>
+    </div>
+  `;
+
+  detailsEl.innerHTML = `
+    <div class="skeleton skeleton-text"></div>
+    <div class="skeleton skeleton-text"></div>
+    <div class="skeleton skeleton-text short"></div>
+  `;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
   // Get references to elements
   const contentEl = document.getElementById("product-content");
+  const imgLoad = document.getElementById("img-load");
   const detailsEl = document.getElementById("product-details");
 
   // Ensure initial state
@@ -14,12 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  //load cards before  result
+  
   fetch(`https://bisque-chinchilla-962517.hostingersite.com/wp-json/custom/v1/products/${id}`)
     .then(res => {
       if (!res.ok) throw new Error("Product not found");
       return res.json();
     })
     .then(product => {
+     // contentEl.style.display = "flex"; 
+     imgLoad.style.display = "none"; // Hide loading image
       // Fill product data
       document.getElementById("product-image").src = product.image;
       document.getElementById("product-title").textContent = product.title;
@@ -50,6 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
           cart.push({
             id: product.id,
             name: product.title,
+            price: parseFloat(product.price),
+            image: product.image,
             quantity: 1
           });
         }
