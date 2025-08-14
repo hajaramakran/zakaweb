@@ -113,7 +113,7 @@
                     <input class="input-field" type="text" name="lastname" placeholder="Nom">
                   </div>
 
-                  <select class="input-field" name="pays" required>
+                  <select class="input-field" name="country" required>
                     <option value="" disabled selected>Pays / Région</option>
                     <option value="AL">Albania</option>
                     <option value="DZ">Algeria</option>
@@ -316,9 +316,26 @@
                     <option value="ZW">Zimbabwe</option>
                   </select>
 
+                  <input class="input-field" type="text" name="city" placeholder="City">
                   <input class="input-field" type="tel" name="phone" placeholder="Numéro de Téléphone">
-                  <input class="input-field" type="email" name="email" placeholder="Adresse de Messagerie">
+                  <input class="input-field" type="text" name="adress" placeholder="Votre address">
 
+                  <input class="input-field" type="email" name="email" placeholder="Adresse de Messagerie">
+                  <div class="payment-mode-options" style="margin-top: 10px; display: flex; gap: 15px; align-items: center;">
+                      <label style="font-weight: bold; margin-right: 10px;">Mode de paiement:</label>
+                      
+                      <label>
+                          <input type="radio" name="payment_mode" value="card" required> Carte Bancaire
+                      </label>
+                      
+                      <label>
+                          <input type="radio" name="payment_mode" value="paypal"> PayPal
+                      </label>
+                      
+                      <label>
+                          <input type="radio" name="payment_mode" value="cash"> Espèces
+                      </label>
+                  </div>
                 </div>
                 <div data-v-ebc99eee="" data-v-243de8d5="" class="paypal-container">
                   <button style="border: none;" id="payment-btn" type="submit"class="btn-act  mt-3">
