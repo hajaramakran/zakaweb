@@ -8,7 +8,7 @@ function showLoadingPlaceholders() {
 
   //6card loading placeholders
   grid.innerHTML = Array.from({ length: perPage }).map(() => `
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-4 d-flex justify-content-center">
       <div class="product-card loading">
         <div class="image-wrapper skeleton"></div>
         <div class="product-details">
@@ -93,6 +93,7 @@ function setupPagination() {
 document.addEventListener("DOMContentLoaded", () => {
   loadProducts();
 });
+
 
 
 
