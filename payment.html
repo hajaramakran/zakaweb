@@ -321,27 +321,33 @@
                   <input class="input-field" type="text" name="address" placeholder="Votre address">
 
                   <input class="input-field" type="email" name="email" placeholder="Adresse de Messagerie">
-                <div class="payment-mode-options">
-                  <label>Mode de paiement:</label>
-                  
-                  <label class="payment-option">
-                      <input type="radio" name="payment_mode" value="card" required>
-                      Carte Bancaire
-                      <img src="images/visa" alt="Cards">
-                  </label>
-                  
-                  <label class="payment-option">
-                      <input type="radio" name="payment_mode" value="paypal">
-                      PayPal
-                      <img src="images/paypal.png" alt="PayPal">
-                  </label>
-                  
-                  <label class="payment-option">
-                      <input type="radio" name="payment_mode" value="cash">
-                      Espèces
-                      <img src="images/cash.png" alt="Cash">
-                  </label>
-              </div>
+               <div class="payment-mode-options">
+    <label>Mode de paiement:</label>
+    
+    <label class="payment-option">
+        <span>
+            <input type="radio" name="payment_mode" value="card" required>
+            Carte Bancaire
+        </span>
+        <img src="images/cards.png" alt="Cards">
+    </label>
+    
+    <label class="payment-option">
+        <span>
+            <input type="radio" name="payment_mode" value="paypal">
+            PayPal
+        </span>
+        <img src="images/paypal.png" alt="PayPal">
+    </label>
+    
+    <label class="payment-option">
+        <span>
+            <input type="radio" name="payment_mode" value="cash">
+            Espèces
+        </span>
+        <img src="images/cash.png" alt="Cash">
+    </label>
+</div>
                 </div>
                 <div data-v-ebc99eee="" data-v-243de8d5="" class="paypal-container">
                   <button style="border: none;" id="payment-btn" type="submit"class="btn-act  mt-3">
