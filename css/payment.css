@@ -191,3 +191,36 @@
   border-color: #e64a58;
   box-shadow: 0 0 0 3px #fa9da53d;
 }
+
+.payment-mode-options {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.payment-mode-options > label:first-child {
+    font-weight: bold;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+    accent-color: #007bff; /* modern blue */
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.payment-option img {
+    height: 18px; /* small and aligned */
+    width: auto;
+    object-fit: contain;
+}
