@@ -195,32 +195,41 @@
 .payment-mode-options {
     margin-top: 10px;
     display: flex;
-    gap: 20px;
-    align-items: center;
+    flex-direction: column; /* stack vertically */
+    gap: 10px;
     font-family: Arial, sans-serif;
+    max-width: 300px; /* optional for nicer layout */
 }
 
 .payment-mode-options > label:first-child {
     font-weight: bold;
-    margin-right: 10px;
-    white-space: nowrap;
+    margin-bottom: 5px;
 }
 
 .payment-option {
     display: flex;
+    justify-content: space-between; /* text left, icon right */
     align-items: center;
-    gap: 6px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.payment-option:hover {
+    border-color: #007bff;
+    background-color: #f8f9fa;
 }
 
 .payment-option input[type="radio"] {
-    accent-color: #007bff; /* modern blue */
+    margin-right: 8px;
+    accent-color: #007bff;
     transform: scale(1.1);
-    cursor: pointer;
 }
 
 .payment-option img {
-    height: 18px; /* small and aligned */
+    height: 20px;
     width: auto;
     object-fit: contain;
 }
