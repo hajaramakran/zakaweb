@@ -115,9 +115,15 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     
 }
-.order-payment h4{
-    color: black;
-    font-size: 16px;
+.order-payment h4, 
+.discount h4, 
+.choukout-form h4{
+    font-size: 20px;        /* adjust size to match */
+    font-weight: 700;       /* bold */
+    text-transform: uppercase; /* all caps */
+    color: #000;            /* black text */
+    letter-spacing: 1px;    /* spacing between letters */
+    margin: 0;
 }
 
 
@@ -259,4 +265,5 @@
   height: 20px;
   width: auto;
 }
+
 
