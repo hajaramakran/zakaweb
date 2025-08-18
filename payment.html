@@ -348,24 +348,34 @@
 
                   <input class="input-field" type="text" name="city" placeholder="City">
                   <input class="input-field" type="tel" name="phone" placeholder="Numéro de Téléphone">
-                  <input class="input-field" type="text" name="adress" placeholder="Votre address">
+                  <input class="input-field" type="text" name="address" placeholder="Votre address">
 
                   <input class="input-field" type="email" name="email" placeholder="Adresse de Messagerie">
-                  <div class="payment-mode-options" style="margin-top: 10px; display: flex; gap: 15px; align-items: center;">
-                      <label style="font-weight: bold; margin-right: 10px;">Mode de paiement:</label>
+                 <div class="payment-mode-options">
+                    <label class="payment-option">
+                      <input type="radio" name="payment_mode" value="card" required>
+                      <span class="custom-radio"></span>
+                      Carte Bancaire
+                      <span class="payment-logos">
+                        <img src="images/visa.png" alt="Visa">
+                        <img src="images/mastercard.png" alt="Mastercard">
+                        <img src="images/maestro.png" alt="Maestro">
+                      </span>
+                    </label>
+                  
+                    <label class="payment-option">
+                      <input type="radio" name="payment_mode" value="paypal">
+                      <span class="custom-radio"></span>
+                      Paypal
+                      <span class="payment-logos">
+                        <img src="images/paypal.png" alt="Visa">
                       
-                      <label>
-                          <input type="radio" name="payment_mode" value="card" required> Carte Bancaire
-                      </label>
-                      
-                      <label>
-                          <input type="radio" name="payment_mode" value="paypal"> PayPal
-                      </label>
-                      
-                      <label>
-                          <input type="radio" name="payment_mode" value="cash"> Espèces
-                      </label>
+                      </span>
+                    </label>
+
+                   
                   </div>
+
                   
                 </div>
                 <div data-v-ebc99eee="" data-v-243de8d5="" class="paypal-container">
