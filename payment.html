@@ -139,10 +139,13 @@
                     </div>
                   </div>
                   <div class="form-row">
-                    <input class="input-field" type="text" name="firstname" placeholder="Prénom">
-                    <input class="input-field" type="text" name="lastname" placeholder="Nom">
-                  </div>
-
+                
+                    <input class="input-field" type="text" name="firstname" placeholder="Prénom" required>
+                    <label class="input-label">Prénom</label>
+                 
+                    <input class="input-field" type="text" name="lastname" placeholder="Nom" required>
+                    <label class="input-label">Nom</label>
+                </div>
                   <select class="input-field" name="country" required>
                     <option value="" disabled selected>Pays / Région</option>
                     <option value="AL">Albania</option>
@@ -346,11 +349,26 @@
                     <option value="ZW">Zimbabwe</option>
                   </select>
 
-                  <input class="input" type="text" name="city" placeholder="City">
-                  <input class="input-field" type="tel" name="phone" placeholder="Numéro de Téléphone">
-                  <input class="input-field" type="text" name="address" placeholder="Votre address">
+                  <div class="input-container">
+                    <input class="input-field" type="text" name="city" placeholder="City">
+                    <label class="input-label">City</label>
+                  </div>
 
-                  <input class="input-field" type="email" name="email" placeholder="Adresse de Messagerie">
+                  <div class="input-container">
+                    <input class="input-field" type="tel" name="phone" placeholder="Numéro de Téléphone">
+                    <label class="input-label">Numéro de Téléphone</label>
+                  </div>
+
+                  <div class="input-container">
+                    <input class="input-field" type="text" name="address" placeholder="Votre address">
+                    <label class="input-label">Votre address</label>
+                  </div>
+
+                  <div class="input-container">
+                    <input class="input-field" type="email" name="email" placeholder="Email">
+                    <label class="input-label">Email</label>
+                  </div>  
+                  
                  <div class="payment-mode-options">
                     <label class="payment-option">
                       <input type="radio" name="payment_mode" value="card" required>
