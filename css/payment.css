@@ -184,10 +184,15 @@
   width: 48%;
 }
 
+.input-container {
+  position: relative;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
 .input-field {
   width: 100%;
   padding: 14px 16px;
-  margin-bottom: 16px;
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -200,6 +205,30 @@
 .input-field:focus {
   border-color: #e64a58;
   box-shadow: 0 0 0 3px #fa9da53d;
+}
+
+/* Label hidden at first */
+.input-label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  opacity: 0; /* invisible initially */
+}
+
+/* Show label when input is focused OR has value */
+.input-field:focus + .input-label,
+.input-field:not(:placeholder-shown) + .input-label {
+  top: -8px;
+  font-size: 13px;
+  background: #fff;
+  padding: 0 4px;
+  color: #e64a58;
+  opacity: 1;
 }
 
 
@@ -265,6 +294,7 @@
   height: 20px;
   width: auto;
 }
+
 
 
 
