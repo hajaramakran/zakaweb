@@ -78,6 +78,36 @@
         <div data-v-243de8d5="" class="container checkout-container">
           
         
+           <div data-v-243de8d5="" class="checkout-order-promo">
+
+            <div class="order-payment">
+              <h4>Votre Commande</h4>
+              <div class="element">
+                <span>
+                  <ul id="cartItems"></ul>
+                </span>
+                <span>
+                  <strong id="orderTotalPrice">0€</strong>
+                </span>
+              </div>
+              <div class="total-price">
+                <span>Total</span>
+                <span id="orderTotalPriceBottom">0€ </span>
+              </div>
+            </div>
+
+
+            <div data-v-243de8d5="" class="discount">
+              <h4 data-v-243de8d5="">Avez-vous un code promo ?</h4>
+              <p data-v-243de8d5="">Si vous possédez un code promo, appliquez-le ci-après.</p>
+              <div data-v-243de8d5="" class="code-input-container"><input data-v-243de8d5="" class="code-input"
+                  maxlength="20"><button data-v-243de8d5="" class="code-button">Appliquer</button></div><!----><!---->
+            </div>
+          
+      
+
+          </div>
+
             <div data-v-243de8d5="" class="checkout-form">
               <form id="payment-form">
                 <div data-v-243de8d5="" class=""
@@ -318,38 +348,58 @@
 
                   <input class="input-field" type="text" name="city" placeholder="City">
                   <input class="input-field" type="tel" name="phone" placeholder="Numéro de Téléphone">
-                  <input class="input-field" type="text" name="address" placeholder="Votre address">
+                  <input class="input-field" type="text" name="adress" placeholder="Votre address">
 
                   <input class="input-field" type="email" name="email" placeholder="Adresse de Messagerie">
-               <div class="payment-mode-options">
-    <label>Mode de paiement:</label>
-    
-    <label class="payment-option">
-        <span>
-            <input type="radio" name="payment_mode" value="card" required>
-            Carte Bancaire
-        </span>
-        <img src="images/visa.png" alt="Cards">
-    </label>
-    
-    <label class="payment-option">
-        <span>
-            <input type="radio" name="payment_mode" value="paypal">
-            PayPal
-        </span>
-        <img src="images/paypal.png" alt="PayPal">
-    </label>
-    
-    <label class="payment-option">
-        <span>
-            <input type="radio" name="payment_mode" value="cash">
-            Espèces
-        </span>
-        <img src="images/cash.png" alt="Cash">
-    </label>
-</div>
+                  <div class="payment-mode-options" style="margin-top: 10px; display: flex; gap: 15px; align-items: center;">
+                      <label style="font-weight: bold; margin-right: 10px;">Mode de paiement:</label>
+                      
+                      <label>
+                          <input type="radio" name="payment_mode" value="card" required> Carte Bancaire
+                      </label>
+                      
+                      <label>
+                          <input type="radio" name="payment_mode" value="paypal"> PayPal
+                      </label>
+                      
+                      <label>
+                          <input type="radio" name="payment_mode" value="cash"> Espèces
+                      </label>
+                  </div>
+                  
                 </div>
                 <div data-v-ebc99eee="" data-v-243de8d5="" class="paypal-container">
+                   <div data-v-243de8d5="" class="secure-payment">
+              <div data-v-243de8d5="" class="payment-features">
+                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
+                    src="images/shipping.png" alt="">
+                  <div data-v-243de8d5="" class="item-title">Livraison instantanée</div>
+                </div>
+                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
+                    src="images/refund.png" alt="">
+                  <div data-v-243de8d5="" class="item-title">Satisfait ou remboursé</div>
+                </div>
+                <div data-v-243de8d5="" class="item"><img data-v-243de8d5="" class="item-icon"
+                    src="images/secure.png" alt="">
+                  <div data-v-243de8d5="" class="item-title">Paiement sécurisé</div>
+                </div>
+              </div>
+              <div data-v-243de8d5="" class="payment-title">Paiement <span>Sécurisé</span> Garanti</div>
+              <ul data-v-243de8d5="" class="payment-icons">
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon lx"
+                    src="images/mcafee.png" alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon" src="images/paypal.png"
+                    alt=""></li><!---->
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon" src="images/visa.png"
+                    alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
+                    src="images/mastercard.png" alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
+                    src="images/discover.png" alt=""></li>
+                <li data-v-243de8d5=""><img data-v-243de8d5="" class="icon"
+                    src="images/american_express.png" alt=""></li>
+              </ul>
+            </div>
                   <button style="border: none;" id="payment-btn" type="submit"class="btn-act  mt-3">
                     <div  class="d-flex align-items-center">
                       <span id="submit-spinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
@@ -363,59 +413,7 @@
             </div>
          
 
-          <div data-v-243de8d5="" class="checkout-order-promo">
-
-            <div class="order-payment">
-              <h4>Votre Commande</h4>
-              <div class="element">
-                <span>
-                  <ul id="cartItems"></ul>
-                </span>
-                <span>
-                  <strong id="orderTotalPrice">0€</strong>
-                </span>
-              </div>
-              <div class="total-price">
-                <span>Total</span>
-                <span id="orderTotalPriceBottom">0€ </span>
-              </div>
-            </div>
-
-
-            <div data-v-243de8d5="" class="discount">
-              <h4 data-v-243de8d5="">Avez-vous un code promo ?</h4>
-              <p data-v-243de8d5="">Si vous possédez un code promo, appliquez-le ci-après.</p>
-              <div data-v-243de8d5="" class="code-input-container"><input data-v-243de8d5="" class="code-input"
-                  maxlength="20"><button data-v-243de8d5="" class="code-button">Appliquer</button></div><!----><!---->
-            </div>
-           <div class="secure-payment-bar">
-           
-            <div class="secure-label">Paiement <span>Sécurisé</span> Garanti</div>
-            <div class="secure-logos">
-              <img src="images/mcafee.png" alt="McAfee" />
-              <img src="images/paypal.png" alt="PayPal" />
-              <img src="images/visa.png" alt="Visa" />
-              <img src="images/mastercard.png" alt="MasterCard" />
-              <img src="images/discover.png" alt="Discover" />
-              <img src="images/american_express.png" alt="American Express" />
-            </div>
-          </div>
-           <div class="secure-payment-items">
-              <div class="secure-item">
-                <img src="images/shipping.png" alt="Livraison" />
-                <span>Livraison instantanée</span>
-              </div>
-              <div class="secure-item">
-                <img src="images/refund.png" alt="Remboursé" />
-                <span>Satisfait ou remboursé</span>
-              </div>
-              <div class="secure-item">
-                <img src="images/secure.png" alt="Paiement sécurisé" />
-                <span>Paiement sécurisé</span>
-              </div>
-            </div>
-
-          </div>
+         
 
         </div>
       </div>
