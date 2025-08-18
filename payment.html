@@ -146,7 +146,7 @@
                     <input class="input-field" type="text" name="lastname" placeholder="Nom" required>
                     <label class="input-label">Nom</label>
                 </div>
-                  <select class="input-field mb-3" name="country" required>
+                  <select class="input-field mb-3" id="country" name="country" required>
                     <option value="" disabled selected>Pays / Région</option>
                     <option value="AL">Albania</option>
                     <option value="DZ">Algeria</option>
@@ -351,10 +351,10 @@
 
                
 
-                  <div class="input-container">
-                    <input class="input-field" type="tel" name="phone" placeholder="Numéro de Téléphone">
-                    <label class="input-label">Numéro de Téléphone</label>
-                  </div>
+                  <div class="input-container" style="display: flex; gap: 5px;">
+                    <input class="input-field" type="text" id="phoneCode" readonly style="width: 80px;" placeholder="+212">
+                    <input class="input-field" type="tel" id="phone" name="phone" placeholder="Numéro de Téléphone" style="flex: 1;">
+                </div>
 
 
                   <div class="input-container">
