@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     $('#payment-form').on('submit', function (e) {
         e.preventDefault();
-        const phoneCode = $('#phoneCode').val() || '';
+        const phoneCodee = $('#phoneCode').val() || '';
         const phoneNumber = $('#phone').val() || '';
-        const fullPhone = phoneCode + phoneNumber;
+        const fullPhone = phoneCodee + phoneNumber;
     
       
         if (phoneNumber.length < 6 || phoneNumber.length > 15) {
@@ -28,8 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
          //  phone code + phone
-        const phoneCode = $('#phoneCode').val() || '';
-        const phoneNumber = $('#phone').val() || '';
+       
          userData['phone'] = fullPhone;
 
 
@@ -112,4 +111,5 @@ document.addEventListener("DOMContentLoaded", () => {
         phoneCodeInput.value = code;
     });
 });
+
 
