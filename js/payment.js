@@ -1,25 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+    $('#phone').on('input', function () {
+        // Remove any non-digit characters
+        this.value = this.value.replace(/\D/g, '');
+    });
+    
     $('#payment-form').on('submit', function (e) {
         e.preventDefault();
-
+        const phoneCode = $('#phoneCode').val() || '';
+        const phoneNumber = $('#phone').val() || '';
+        const fullPhone = phoneCode + phoneNumber;
+    
+      
+        if (phoneNumber.length < 6 || phoneNumber.length > 15) {
+            alert('Please enter a valid phone number.');
+            return;
+        }
         const $btn = $('#payment-btn');
         const $spinner = $('#submit-spinner');
         const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         $spinner.removeClass('d-none');
         $btn.prop('disabled', true);
 
-        // Convert form data to object
         const formArray = $(this).serializeArray();
         let userData = {};
         formArray.forEach(field => {
             userData[field.name] = field.value;
         });
 
-         // Combine phone code + phone
+         //  phone code + phone
         const phoneCode = $('#phoneCode').val() || '';
         const phoneNumber = $('#phone').val() || '';
-        userData['phone'] = phoneCode + phoneNumber;  // overwrite phone with full number
+         userData['phone'] = fullPhone;
 
 
         // Extract only product ID & quantity
@@ -101,3 +112,4 @@ document.addEventListener("DOMContentLoaded", () => {
         phoneCodeInput.value = code;
     });
 });
+
