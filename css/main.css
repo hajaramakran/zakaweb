@@ -16492,6 +16492,9 @@ a {
         background: linear-gradient(180deg, #193694, #87c8fe)
     }
 
+    .hdr-sct .hdr-pnl .logo-ref img {
+        height: 35px;   /* reduce height */
+    }
     .hdr-sct .i-crc-blk .i-crc-bg.crc-001 {
         height: 40vh;
         left: calc(50% - 20vh);
