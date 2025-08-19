@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         GE: '+995', DE: '+49', GI: '+350', GR: '+30', GL: '+299', GD: '+1-473',
         GP: '+590', GT: '+502', GN: '+224', GW: '+245', GY: '+592', HN: '+504',
         HK: '+852', HU: '+36', IS: '+354', IN: '+91', ID: '+62', IE: '+353',
-        IL: '+972', IT: '+39', JM: '+1-876', JP: '+81', JO: '+962', KZ: '+7',
+        IT: '+39', JM: '+1-876', JP: '+81', JO: '+962', KZ: '+7',
         KE: '+254', KI: '+686', KW: '+965', KG: '+996', LA: '+856', LV: '+371',
         LS: '+266', LI: '+423', LT: '+370', LU: '+352', MK: '+389', MG: '+261',
         MW: '+265', MY: '+60', MV: '+960', ML: '+223', MT: '+356', MH: '+692',
@@ -111,5 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
         phoneCodeInput.value = code;
     });
 });
+
 
 
